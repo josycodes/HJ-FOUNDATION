@@ -5,7 +5,7 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="main-banner-content main-banner-content-four text-center">
-                            <span>{{ $siteName }}</span>
+                            <span>{{ $allbasics->sitename }}</span>
                             <h1>It is more difficult to give money away </h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing incididunt ut laboredolore magna aliqua elsed tempomet, consectetur adipiscing.</p>
                             <div class="banner-btn">
@@ -29,7 +29,7 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="main-banner-content main-banner-content-four text-center">
-                            <span>{{ $siteName }}</span>
+                            <span>{{ $allbasics->sitename }}</span>
                             <h1>It is more difficult to give money away </h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing incididunt ut laboredolore magna aliqua elsed tempomet, consectetur adipiscing.</p>
                             <div class="banner-btn">
@@ -53,7 +53,7 @@
                 <div class="d-table-cell">
                     <div class="container">
                         <div class="main-banner-content main-banner-content-four text-center">
-                            <span>{{ $siteName }}</span>
+                            <span>{{ $allbasics->sitename }}</span>
                             <h1>It is more difficult to give money away </h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing incididunt ut laboredolore magna aliqua elsed tempomet, consectetur adipiscing.</p>
                             <div class="banner-btn">

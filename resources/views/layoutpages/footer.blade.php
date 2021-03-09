@@ -7,17 +7,17 @@
                     <div class="footer-info-contact">
                         <i class="flaticon-pin"></i>
                         <h3>Location</h3>
-                        <span><?php print $siteAddress;?></span>
+                        <span>{{ $allbasics->siteaddress }}</span>
                     </div>
                     <div class="footer-info-contact">
                         <i class="flaticon-call"></i>
                         <h3>Call Us</h3>
-                        <span><a href="tel:<?php print $sitePhone;?>"><?php print $sitePhone;?></a></span>
+                        <span><a href="tel:{{ $allbasics->sitephone }}">{{ $allbasics->sitephone }}</a></span>
                     </div>
                     <div class="footer-info-contact">
                         <i class="flaticon-email"></i>
                         <h3>Email Us</h3>
-                        <span><?php print $siteEmail;?></span>
+                        <span>{{ $allbasics->siteemail }}</span>
                     </div>
                 </div>
             </div>
@@ -110,14 +110,14 @@
                     <h3>Recent News</h3>
                     <div class="footer-news">
                         <a href="single-blog.html">
-                            <img src="assets/img/footer-news/1.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/footer-news/1.jpg') }}" alt="image">
                             <h4>Support about poverty to poor family</h4>
                             <span>Poor, 22 January</span>
                         </a>
                     </div>
                     <div class="footer-news">
                         <a href="single-blog.html">
-                            <img src="assets/img/footer-news/2.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/footer-news/2.jpg') }}" alt="image">
                             <h4>Mostly suffered school Boys care</h4>
                             <span>Health, 24 February</span>
                         </a>
@@ -132,13 +132,13 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4">
                         <div class="copyright-logo">
-                            <img src="assets/img/white-logo.png" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/white-logo.png') }}" alt="image">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <p>
                             <i class="far fa-copyright"></i>
-                            Copyright © <?php $d=date('Y'); print $d;?> <?php print $siteName;?>. All Rights Reserved. Developed by
+                            Copyright © <?php $d=date('Y'); print $d;?> {{ $allbasics->sitename }}. All Rights Reserved. Developed by
                             <a href="https://techocraft.com/" target="_blank">
                                 Techo Craft
                             </a>

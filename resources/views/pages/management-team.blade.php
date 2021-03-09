@@ -1,6 +1,8 @@
 <?php
-$title = 'HJ Foundation | Where charity lives'; $active2='active';
-require_once('head.php');?>
+$title = 'HJ Foundation | Where charity lives';
+$active2='active';
+?>
+@include('layoutpages.head')
 <body>
 
 <div class="preloader">
@@ -10,7 +12,7 @@ require_once('head.php');?>
 </div>
 </div>
 
-<?php require_once('header.php');?>
+@include('layoutpages.header')
 
 <div class="page-title-area">
     <div class="d-table">
@@ -19,7 +21,7 @@ require_once('head.php');?>
                 <div class="page-title-content">
                     <h2>Management Team</h2>
                     <ul>
-                        <li><a href="./">Home</a></li>
+                        <li><a href="{{ route('/') }}">Home</a></li>
                         <li>Management Team</li>
                     </ul>
                 </div>
@@ -36,7 +38,7 @@ require_once('head.php');?>
                 <div class="row pb-5">
                     <div class="col-lg-2">
                         <div class="team-image">
-                            <img src="assets/img/team/7.png" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/team/7.png') }}" alt="image">
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -51,7 +53,7 @@ require_once('head.php');?>
                 <div class="row pb-5">
                     <div class="col-lg-2">
                         <div class="team-image">
-                            <img src="assets/img/team/7.png" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/team/7.png') }}" alt="image">
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -66,4 +68,4 @@ require_once('head.php');?>
     </div>
 </section>
 
-<?php require_once('footer.php');?>
+@include('layoutpages.footer')

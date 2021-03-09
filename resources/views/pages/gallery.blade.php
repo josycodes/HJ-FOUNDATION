@@ -1,6 +1,8 @@
 <?php
-$title = 'HJ Foundation | Where charity lives'; $active2='active';
-require_once('head.php');?>
+$title = 'HJ Foundation | Where charity lives'; 
+$active2='active';
+?>
+@include('layoutpages.head')
 <body>
 
 <div class="preloader">
@@ -10,7 +12,7 @@ require_once('head.php');?>
 </div>
 </div>
 
-<?php require_once('header.php');?>
+@include('layoutpages.header')
 
 <div class="page-title-area">
     <div class="d-table">
@@ -19,7 +21,7 @@ require_once('head.php');?>
                 <div class="page-title-content">
                     <h2>Gallery</h2>
                     <ul>
-                        <li><a href="./">Home</a></li>
+                        <li><a href="{{ route('/') }}">Home</a></li>
                         <li>Gallery</li>
                     </ul>
                 </div>
@@ -37,64 +39,64 @@ require_once('head.php');?>
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="assets/img/gallery/1.jpg" alt="image">
-                    <a href="assets/img/gallery/1.jpg" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="{{ asset('assets/assetpage/img/gallery/1.jpg') }}" alt="image">
+                    <a href="{{ asset('assets/assetpage/img/gallery/1.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="assets/img/gallery/2.jpg" alt="image">
-                    <a href="assets/img/gallery/2.jpg" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="{{ asset('assets/assetpage/img/gallery/2.jpg') }}" alt="image">
+                    <a href="{{ asset('assets/assetpage/img/gallery/2.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="assets/img/gallery/3.jpg" alt="image">
-                    <a href="assets/img/gallery/3.jpg" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="{{ asset('assets/assetpage/img/gallery/3.jpg') }}" alt="image">
+                    <a href="{{ asset('assets/assetpage/img/gallery/3.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="assets/img/gallery/4.jpg" alt="image">
-                    <a href="assets/img/gallery/4.jpg" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="{{ asset('assets/assetpage/img/gallery/4.jpg') }}" alt="image">
+                    <a href="{{ asset('assets/assetpage/img/gallery/4.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="assets/img/gallery/5.jpg" alt="image">
-                    <a href="assets/img/gallery/5.jpg" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="{{ asset('assets/assetpage/img/gallery/5.jpg') }}" alt="image">
+                    <a href="{{ asset('assets/assetpage/img/gallery/5.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="assets/img/gallery/6.jpg" alt="image">
-                    <a href="assets/img/gallery/6.jpg" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="{{ asset('assets/assetpage/img/gallery/6.jpg') }}" alt="image">
+                    <a href="{{ asset('assets/assetpage/img/gallery/6.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="assets/img/gallery/7.jpg" alt="image">
-                    <a href="assets/img/gallery/7.jpg" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="{{ asset('assets/assetpage/img/gallery/7.jpg') }}" alt="image">
+                    <a href="{{ asset('assets/assetpage/img/gallery/7.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="assets/img/gallery/8.jpg" alt="image">
-                    <a href="assets/img/gallery/8.jpg" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="{{ asset('assets/assetpage/img/gallery/8.jpg') }}" alt="image">
+                    <a href="{{ asset('assets/assetpage/img/gallery/8.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
@@ -104,4 +106,4 @@ require_once('head.php');?>
 </div>
 
 
-<?php require_once('footer.php');?>
+@include('layoutpages.footer')

@@ -1,15 +1,3 @@
-<?php
-$siteName = 'HJ Foundation';
-$siteName2 = 'Hadiqatul Jannah Foundation';
-$siteDomain = 'hadiqatuljannahfoundation.com';
-$siteFacebook = 'https://facebook.com';
-$siteInstagram = 'https://instagram.com';
-$siteTwitter = 'https://twitter.com';
-$siteLinkedin = 'https://linkedin.com';
-$siteAddress = '67 Yakuma Street Off Idoku FCT Abuja';
-$sitePhone = '+2348038475290';
-$siteEmail = 'info@'.$siteDomain;
-?>
 <!doctype html>
 <html lang="zxx">
 <head>
@@ -34,4 +22,6 @@ $siteEmail = 'info@'.$siteDomain;
     <link rel="stylesheet" href="{{ asset('assets/assetpage/css/custom.css') }}">
     <title><?php print @$title;?></title>
     <link rel="icon" type="image/png" href="{{ ('assets/assetpage/logo/favicon.png') }}">
+    <link href="{{ asset('assets/sweetalert-js/sweetalert.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('assets/sweetalert-js/sweetalert.min.js') }}"></script>
 </head>

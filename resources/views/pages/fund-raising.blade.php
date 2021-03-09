@@ -1,6 +1,8 @@
 <?php
-$title = 'HJ Foundation | Where charity lives'; $active4='active';
-require_once('head.php');?>
+$title = 'HJ Foundation | Where charity lives'; 
+$active4='active';
+?>
+@include('layoutpages.head')
 <body>
 
 <div class="preloader">
@@ -10,17 +12,17 @@ require_once('head.php');?>
 </div>
 </div>
 
-<?php require_once('header.php');?>
+@include('layoutpages.header')
 
 <div class="page-title-area">
     <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
                 <div class="page-title-content">
-                    <h2>Awareness</h2>
+                    <h2>Fund Raising</h2>
                     <ul>
-                        <li><a href="./">Home</a></li>
-                        <li>Awareness</li>
+                        <li><a href="{{ route('/') }}">Home</a></li>
+                        <li>Fund Raising</li>
                     </ul>
                 </div>
             </div>
@@ -69,4 +71,4 @@ require_once('head.php');?>
 </section>
 
 
-<?php require_once('footer.php');?>
+@include('layoutpages.footer')

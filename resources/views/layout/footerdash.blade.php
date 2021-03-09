@@ -859,6 +859,7 @@
     <script type="text/javascript" src="{{ asset('assets/scripts/main.d810cf0ae7f39f28f336.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/sweetalert-js/sweetalert.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/scripts/yearpicker.js') }}"></script>
+    @include('sweetalert::alert')
 
 <script>
     window.CKEDITOR_BASEPATH = 'http://localhost:8000/assets/scripts/ckeditor/';
@@ -903,7 +904,7 @@ $(document).ready(function (){
  });
 });
     </script>
-    @include('sweetalert::alert')
+
 
 
 

@@ -1,6 +1,8 @@
 <?php
-$title = 'HJ Foundation | Where charity lives'; $active5='active';
-require_once('head.php');?>
+$title = 'HJ Foundation | Where charity lives';
+ $active5='active';
+?>
+@include('layoutpages.head')
 <body>
 
 <div class="preloader">
@@ -10,7 +12,7 @@ require_once('head.php');?>
 </div>
 </div>
 
-<?php require_once('header.php');?>
+@include('layoutpages.header')
 
 <div class="page-title-area">
     <div class="d-table">
@@ -19,7 +21,7 @@ require_once('head.php');?>
                 <div class="page-title-content">
                     <h2>Membership Application Forms</h2>
                     <ul>
-                        <li><a href="./">Home</a></li>
+                        <li><a href="{{ route('/') }}">Home</a></li>
                         <li>Membership Application Forms</li>
                     </ul>
                 </div>
@@ -35,8 +37,8 @@ require_once('head.php');?>
             <div class="col-lg-12">
 
                 <h4>Offline Application:<br>Click on the links below to download our membership application form for the category of interest.</h4>
-                <p><a href="#" onclick="alert('Not available yet...');">Download Individual Membership Application Form</a></p>
-                <p><a href="#" onclick="alert('Not available yet...');">Download Corporate Membership Application Form</a></p>
+                <p><a href="#" onclick="swal('Not available yet...');">Download Individual Membership Application Form</a></p>
+                <p><a href="#" onclick="swal('Not available yet...');">Download Corporate Membership Application Form</a></p>
 
                 <h4 align="center">Online Application:<br>Fill out the form below.</h4>
                 <div class="faq-contact">
@@ -90,4 +92,4 @@ require_once('head.php');?>
 </section>
 
 
-<?php require_once('footer.php');?>
+@include('layoutpages.footer')

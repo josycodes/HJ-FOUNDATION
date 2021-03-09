@@ -1,6 +1,9 @@
 <?php
-$title = 'HJ Foundation | Where charity lives'; $active2='active';
-require_once('head.php');?>
+$title = 'HJ Foundation | Where charity lives'; 
+$active2='active';
+?>
+@include('layoutpages.head')
+
 <body>
 
 <div class="preloader">
@@ -10,7 +13,7 @@ require_once('head.php');?>
 </div>
 </div>
 
-<?php require_once('header.php');?>
+@include('layoutpages.header')
 
 <div class="page-title-area">
     <div class="d-table">
@@ -19,7 +22,7 @@ require_once('head.php');?>
                 <div class="page-title-content">
                     <h2>About Us</h2>
                     <ul>
-                        <li><a href="./">Home</a></li>
+                        <li><a href="{{ route('/') }}">Home</a></li>
                         <li>About</li>
                     </ul>
                 </div>
@@ -38,7 +41,7 @@ require_once('head.php');?>
 <i class="flaticon-care-about-plants"></i>
 About us
 </span>
-<h3><?php print $siteName2;?></h3>
+<h3>{{ $allbasics->sitename }}</h3>
 <p class="main-color">
 Your support will help us to make life better living for poor vulnerable children.
 </p>
@@ -58,8 +61,8 @@ More about us
 </div>
 <div class="col-lg-6">
 <div class="about-image about-four">
-<img src="assets/img/about/1.jpg" class="shadow" alt="image">
-<img src="assets/img/about/2.jpg" class="shadow" alt="image">
+<img src="{{ asset('assets/assetpage/img/about/1.jpg') }}" class="shadow" alt="image">
+<img src="{{ asset('assets/assetpage/img/about/2.jpg') }}" class="shadow" alt="image">
 <div class="about-video">
 <a href="https://www.youtube.com/watch?v=uemObN8_dcw" class="video-btn popup-youtube">
 <i class="bx bx-play"></i>
@@ -76,7 +79,7 @@ More about us
 <div class="row">
 <div class="col-lg-6 p-0">
 <div class="mission-image">
-<img src="assets/img/mission.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/mission.png') }}" alt="image">
 </div>
 </div>
 <div class="col-lg-6">
@@ -151,7 +154,7 @@ Our Mission
 <i class="flaticon-support"></i>
 Meet Our Team
 </span>
-<h2>Talented Team behind <?php print $siteName2;?></h2>
+<h2>Talented Team behind {{ $allbasics->sitename1 }}</h2>
 <p>Quis ipsum suspendice consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendices gravida.</p>
 </div>
 </div>
@@ -169,7 +172,7 @@ Meet Our Team
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="assets/img/team/7.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/team/7.png') }}" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -200,7 +203,7 @@ Meet Our Team
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="assets/img/team/8.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/team/8.png') }}" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -231,7 +234,7 @@ Meet Our Team
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="assets/img/team/9.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/team/9.png') }}" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -262,7 +265,7 @@ Meet Our Team
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="assets/img/team/10.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/team/10.png') }}" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -295,4 +298,4 @@ Meet Our Team
 </section>
 
 
-<?php require_once('footer.php');?>
+@include('layoutpages.footer')
