@@ -34,7 +34,7 @@
                         </div>
          
             <div class="col-md-12">
-                <form method="POST" enctype="multipart/form-data" action="{{ route('SubmitBasics') }}" id="basics-form">
+                <form method="POST" enctype="multipart/form-data" action="{{ route('SubmitBasics') }}">
                             @csrf 
                 <div class="main-card mb-3 card">
                     <div class="card-body">
@@ -43,69 +43,69 @@
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Name</label>
                                 <div class="col-sm-10">
-                                    <input name="sitename" type="text" class="form-control" value="{{ $allbasics->sitename }}" required id="sitename">
+                                    <input name="sitename" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Name1</label>
                                 <div class="col-sm-10">
-                                    <input name="sitename1" type="text" class="form-control" value="{{ $allbasics->sitename1 }}" required>
+                                    <input name="sitename1" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Domain</label>
                                 <div class="col-sm-10">
-                                    <input name="sitedomain" type="text" class="form-control" value="{{ $allbasics->sitedomain }}" required>
+                                    <input name="sitedomain" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Facebook Address</label>
                                 <div class="col-sm-10">
-                                    <input name="sitefacebook" type="text" class="form-control" value="{{ $allbasics->sitefacebook }}" required>
+                                    <input name="sitefacebook" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Instagram Address</label>
                                 <div class="col-sm-10">
-                                    <input name="siteinstagram" type="text" class="form-control" value="{{ $allbasics->siteinstagram }}" required>
+                                    <input name="siteinstagram" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Twitter Address</label>
                                 <div class="col-sm-10">
-                                    <input name="sitetwitter" type="text" class="form-control" value="{{ $allbasics->sitetwitter }}" required>
+                                    <input name="sitetwitter" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
 
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site LinkedIn</label>
                                 <div class="col-sm-10">
-                                    <input name="sitelinkedin" type="text" class="form-control" value="{{ $allbasics->sitelinkedin }}" required>
+                                    <input name="sitelinkedin" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Location Address</label>
                                 <div class="col-sm-10">
-                                    <input name="sitelocation" type="text" class="form-control" value="{{ $allbasics->siteaddress }}" required>
+                                    <input name="sitelocation" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Phone</label>
                                 <div class="col-sm-10">
-                                    <input name="sitephone" type="text" class="form-control" value="{{ $allbasics->sitephone }}" required>
+                                    <input name="sitephone" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             <div class="position-relative row form-group">
                                 <label for="exampleEmail" class="col-sm-2 col-form-label">Site Email</label>
                                 <div class="col-sm-10">
-                                    <input name="siteemail" type="text" class="form-control" value="{{ $allbasics->siteemail }}" required>
+                                    <input name="siteemail" type="text" class="form-control" value="" required>
                                 </div>
                             </div>
                             
                             <div class="position-relative row form-check">
                                 <div class="col-md-12">
                                 <center>
-                                <button class="ladda-button mb-2 mr-2 btn btn-shadow btn-warning" data-style="slide-down" id="submit" type="submit">
+                                <button class="ladda-button mb-2 mr-2 btn btn-shadow btn-warning" data-style="slide-down" type="submit">
                                 <span class="ladda-label">Save Settings</span>
                                      <span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
                                         </button>
@@ -154,8 +154,8 @@
 		//get image file
             var image = $('#file')[0].files[0];
             var fd = new FormData();
-            if($('#file').get(0).files.length === 0){
-              swal("Empty File", "Please Select a file","error");
+            if(image === ""){
+              alert("Please enter image")
               return;
             }
             //append image file to form data
@@ -196,54 +196,5 @@
 </script>
 
 <script>
-    $("#submit").click(function(e) {
-        e.preventDefault();
-
-        var sitename = $("#sitename").val();
-        var sitename1 = $("#sitename1").val();
-        var sitedomain = $("#sitedomain").val();
-        var sitefacebook = $("#sitefacebook").val();
-        var siteinstagram = $("#siteinstagram").val();
-        var sitetwitter = $("#sitetwitter").val();
-        var sitelinkedin = $("#sitelinkedin").val();
-        var sitelocation = $("#sitelocation").val();
-        var sitephone = $("#sitephone").val();
-        var siteemail = $("#siteemail").val();
-
-        var data = $("#basics-form").serialize();
-        if(sitename == "" || sitename1 == "" || sitedomain == "" || sitefacebook == "" || siteinstagram == "" || sitetwitter == "" || sitelinkedin == "" || sitelocation =="" || sitephone == "" || siteemail == "" ){
-            swal("Empty Fields", "Please Fill all fields!!!", "error");
-            return;
-        }
-        const myForm = $('form#basics-form');
-            $.ajax(myForm.attr('action'),{
-                type : 'post',
-                data : data,
-                    success: function(response){
-
-                        if(response.status == 1){
-                            swal("Success", "Updated Successfully!!!", "success");
-                            $("#submit").html('Updated successfully');
-
-                        }
-                        else{
-                            swal("Error", "Submission Failed!!!!", "error");
-                            $("#submit").html('Submission Failed!');
-                        }
-                    
-                    },
-                    error : function(jqXHR,textStatus,errorThrown){
-                        if(textStatus ='error'){
-                            swal("Error", "Submission Failed!!!!", "error");
-                        }
-                        $("#submit").html('Failed');
-                    },
-                    beforeSend :function(){
-                    $("#submit").html('Sending..');
-                    },
-            });
-
-                                    
-    });
- 
+    
 </script>

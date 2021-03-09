@@ -1,6 +1,8 @@
 <?php
-$title = 'HJ Foundation | Where charity lives'; $active3='active';
-require_once('head.php');?>
+$title = 'HJ Foundation | Where charity lives'; 
+$active3='active';
+?>
+@include('layoutpages.head')
 <body>
 
 <div class="preloader">
@@ -10,7 +12,7 @@ require_once('head.php');?>
 </div>
 </div>
 
-<?php require_once('header.php');?>
+@include('layoutpages.header')
 
 <div class="page-title-area">
     <div class="d-table">
@@ -19,7 +21,7 @@ require_once('head.php');?>
                 <div class="page-title-content">
                     <h2>News Detail</h2>
                     <ul>
-                        <li><a href="./">Home</a></li>
+                        <li><a href="{{ route('/') }}">Home</a></li>
                         <li>News Detail</li>
                     </ul>
                 </div>
@@ -35,7 +37,7 @@ require_once('head.php');?>
             <div class="col-lg-8 col-md-12">
                 <div class="blog-details-desc">
                     <div class="article-image">
-                        <img src="assets/img/blog-details/1.jpg" alt="image">
+                        <img src="{{ asset('assets/assetpage/img/blog-details/1.jpg') }}" alt="image">
                     </div>
                     <div class="article-content">
                         <div class="entry-meta">
@@ -61,17 +63,17 @@ require_once('head.php');?>
                         <ul class="wp-block-gallery columns-3">
                             <li class="blocks-gallery-item">
                                 <figure>
-                                    <img src="assets/img/blog-details/2.jpg" alt="image">
+                                    <img src="{{ asset('assets/assetpage/img/blog-details/2.jpg') }}" alt="image">
                                 </figure>
                             </li>
                             <li class="blocks-gallery-item">
                                 <figure>
-                                    <img src="assets/img/blog-details/3.jpg" alt="image">
+                                    <img src="{{ asset('assets/assetpage/img/blog-details/3.jpg') }}" alt="image">
                                 </figure>
                             </li>
                             <li class="blocks-gallery-item">
                                 <figure>
-                                    <img src="assets/img/blog-details/4.jpg" alt="image">
+                                    <img src="{{ asset('assets/assetpage/img/blog-details/4.jpg') }}" alt="image">
                                 </figure>
                             </li>
                         </ul>
@@ -207,4 +209,4 @@ require_once('head.php');?>
 
 
 
-<?php require_once('footer.php');?>
+@include('layoutpages.footer')

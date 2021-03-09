@@ -1,22 +1,10 @@
-<?php
-$siteName = 'HJ Foundation';
-$siteName2 = 'Hadiqatul Jannah Foundation';
-$siteDomain = 'hadiqatuljannahfoundation.com';
-$siteFacebook = 'https://facebook.com';
-$siteInstagram = 'https://instagram.com';
-$siteTwitter = 'https://twitter.com';
-$siteLinkedin = 'https://linkedin.com';
-$siteAddress = '67 Yakuma Street Off Idoku FCT Abuja';
-$sitePhone = '+2348038475290';
-$siteEmail = 'info@'.$siteDomain;
-?>
 <div class="header-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="header-content">
                     <p>
-                        <a href="donate">The fund will go to the poor... <span>Donate Now</span></a>
+                        <a href="{{ route('Donate') }}">The fund will go to the poor... <span>Donate Now</span></a>
                     </p>
                 </div>
             </div>
@@ -24,16 +12,16 @@ $siteEmail = 'info@'.$siteDomain;
                 
                 <div class="top-header-social">
                     <span>Follow us:</span>
-                    <a href="{{ $siteFacebook }}" target="_blank">
+                    <a href="{{ $allbasics->sitefacebook }}" target="_blank">
                         <i class='flaticon-facebook'></i>
                     </a>
-                    <a href="{{ $siteTwitter }}" target="_blank">
+                    <a href="{{ $allbasics->sitetwitter  }}" target="_blank">
                         <i class='flaticon-twitter'></i>
                     </a>
-                    <a href="{{ $siteInstagram }}" target="_blank">
+                    <a href="{{ $allbasics->siteinstagram }}" target="_blank">
                         <i class='flaticon-instagram'></i>
                     </a>
-                    <a href="{{ $siteLinkedin }}" target="_blank">
+                    <a href="{{ $allbasics->sitelinkedin  }}" target="_blank">
                         <i class='flaticon-linkedin'></i>
                     </a>
                 </div>
@@ -65,43 +53,43 @@ $siteEmail = 'info@'.$siteDomain;
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="./" class="nav-link {{ $active1 }}">
+                            <a href="{{ route('/') }}" class="nav-link  <?php print @$active1; ?>">
                                 Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="about" class="nav-link {{ $active2 }}">
+                            <a href="#" class="nav-link  <?php print @$active2; ?>">
                                 About
                                 <i class='bx bx-chevron-down'></i>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="about" class="nav-link">
+                                    <a href="{{ route('About Us') }}" class="nav-link">
                                         About Us
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="aims-objectives" class="nav-link">
+                                    <a href="{{ route('Aims-Objectives') }}" class="nav-link">
                                         Aims & Objectives
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="board-of-trustees" class="nav-link">
+                                    <a href="{{ route('Board Of Trustees') }}" class="nav-link">
                                         Board of Trustees
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="management-team" class="nav-link">
+                                    <a href="{{ route('Management Team') }}" class="nav-link">
                                         Management Team
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="faq" class="nav-link">
-                                        Frequently Asked Question
+                                    <a href="{{ route('Frequently Asked Questions') }}" class="nav-link">
+                                        Frequently Asked Questions
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="gallery" class="nav-link">
+                                    <a href="{{ route('Gallery') }}" class="nav-link">
                                         Gallery
                                     </a>
                                 </li>
@@ -114,12 +102,12 @@ $siteEmail = 'info@'.$siteDomain;
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="news" class="nav-link">
+                                    <a href="{{ route('News') }}" class="nav-link">
                                         News
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="events" class="nav-link">
+                                    <a href="{{ route('Events') }}" class="nav-link">
                                         Events
                                     </a>
                                 </li>
@@ -132,17 +120,17 @@ $siteEmail = 'info@'.$siteDomain;
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="awareness" class="nav-link">
+                                    <a href="{{ route('Awareness') }}" class="nav-link">
                                         Awareness
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="research" class="nav-link">
+                                    <a href="{{ route('Research') }}" class="nav-link">
                                         Research
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="fund-raising" class="nav-link">
+                                    <a href="{{ route('Fund Raising') }}" class="nav-link">
                                         Fund Raising
                                     </a>
                                 </li>
@@ -155,36 +143,36 @@ $siteEmail = 'info@'.$siteDomain;
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="membership-categories" class="nav-link">
+                                    <a href="{{ route('Memebership Categories') }}" class="nav-link">
                                         Membership Categories
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="benefits-to-members" class="nav-link">
+                                    <a href="{{ route('Benefits To Members') }}" class="nav-link">
                                         Benefits to Members
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="membership-application-forms" class="nav-link">
+                                    <a href="{{ route('Membership Application Forms') }}" class="nav-link">
                                         Membership Application Forms
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="volunteer-opportunities" class="nav-link">
+                                    <a href="{{ route('Volunteer Opportunities') }}" class="nav-link">
                                         Volunteer Opportunities
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="contact" class="nav-link <?php print @$active6;?>">
+                            <a href="{{ route('Contact Us') }}" class="nav-link <?php print @$active6;?>">
                                 Contact
                             </a>
                         </li>
                     </ul>
                     <div class="others-options">
                         <div class="option-item">
-                            <a href="donate" class="btn btn-success baseColor">Donate</a>
+                            <a href="{{ route('Donate') }}" class="btn btn-success baseColor">Donate</a>
                         </div>
                         <div class="burger-menu">
                             <i class="flaticon-menu"></i>
@@ -205,36 +193,36 @@ $siteEmail = 'info@'.$siteDomain;
             </div>
         </div></center>
         <div class="sidebar-instagram-feed">
-            <center><a href="donate" class="btn btn-success baseColor btn-lg">DONATE</a></center>
+            <center><a href="{{ route('Donate') }}" class="btn btn-success baseColor btn-lg">DONATE</a></center>
         </div>
         <div class="sidebar-contact-area">
             <div class="contact-info">
                 <div class="contact-info-content">
                     <h2>
-                        <a href="tel:{{ $sitePhone }}">
-                           {{ $sitePhone }}
+                        <a href="tel:{{ $allbasics->sitephone  }}">
+                           {{ $allbasics->sitephone }}
                         </a>
                         <span>OR</span>
-                        <span class="__cf_email__"><?php print $siteEmail;?></span>
+                        <span class="__cf_email__">{{ $allbasics->siteemail}}</span>
                     </h2>
                     <ul class="social">
                         <li>
-                            <a href="<?php print $siteFacebook;?>" target="_blank">
+                            <a href="{{ $allbasics->sitefacebook}}" target="_blank">
                                 <i class="flaticon-facebook"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php print $siteTwitter;?>" target="_blank">
+                            <a href="{{ $allbasics->sitetwitter }}" target="_blank">
                                 <i class="flaticon-twitter"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php print $siteInstagram;?>" target="_blank">
+                            <a href="{{ $allbasics->siteinstagram }}" target="_blank">
                                 <i class="flaticon-instagram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="<?php print $siteLinkedin;?>" target="_blank">
+                            <a href="{{ $allbasics->sitelinkedin }}" target="_blank">
                                 <i class="flaticon-linkedin"></i>
                             </a>
                         </li>

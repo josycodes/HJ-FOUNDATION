@@ -17,5 +17,5 @@
 <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/sweetalert-js/sweetalert.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/css/yearpicker.css') }}" rel="stylesheet">
-
+<script type="text/javascript" src="{{ asset('assets/sweetalert-js/sweetalert.min.js') }}"></script>
 </head>

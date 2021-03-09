@@ -37,15 +37,12 @@
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
-                                <div class="widget-content-left ml-3 header-user-info">
-                                    
-                                    <div class="widget-heading"> {{ Auth::user()->name }}</div>
-                                    <div class="widget-subheading">
-                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-
-                                    ADMIN OFFICER
-                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
-                                        </a>
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                        <img width="42" class="rounded-circle" src="{{ asset('storage/upload/'.Auth::user()->picture) }}" alt="">
+                                        <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                    </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
                                             <div class="dropdown-menu-header">
                                                 <div class="dropdown-menu-header-inner bg-info">
@@ -79,6 +76,9 @@
                                                         </li>
                                                         <li class="nav-item">
                                                             <a href="javascript:void(0);" class="nav-link">Edit Password</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="javascript:void(0);" class="nav-link">Add New Admin</a>
                                                         </li>
                                                        
                                                       

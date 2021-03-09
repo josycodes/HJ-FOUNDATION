@@ -1,5 +1,6 @@
 @php
-$title = 'HJ Foundation | Where charity lives'; $active1='active';
+$title = 'HJ Foundation | Where charity lives';
+$active1 = 'active';
 @endphp
 
 @include('layoutpages.head')
@@ -21,8 +22,8 @@ $title = 'HJ Foundation | Where charity lives'; $active1='active';
 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
 <div class="feature-card">
 <div class="icon">
-<img src="assets/img/icon/1.png" alt="image">
-<img src="assets/img/icon/white-1.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/icon/1.png') }}" alt="image">
+<img src="{{ asset('assets/assetpage/img/icon/white-1.png') }}" alt="image">
 </div>
 <h3>Become A Volunteer</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod tempor incididun labore voluptatem accusantium.</p>
@@ -34,8 +35,8 @@ Join now +
 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
 <div class="feature-card">
 <div class="icon">
-<img src="assets/img/icon/2.png" alt="image">
-<img src="assets/img/icon/white-2.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/icon/2.png') }}" alt="image">
+<img src="{{ asset('assets/assetpage/img/icon/white-2.png') }}" alt="image">
 </div>
 <h3>Quick Fundraiser</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod tempor incididun labore voluptatem accusantium.</p>
@@ -47,8 +48,8 @@ Give now +
 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
 <div class="feature-card">
 <div class="icon">
-<img src="assets/img/icon/3.png" alt="image">
-<img src="assets/img/icon/white-3.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/icon/3.png') }}" alt="image">
+<img src="{{ asset('assets/assetpage/img/icon/white-3.png') }}" alt="image">
 </div>
 <h3>Give Donation</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod tempor incididun labore voluptatem accusantium.</p>
@@ -60,8 +61,8 @@ Donate now +
 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
 <div class="feature-card">
 <div class="icon">
-<img src="assets/img/icon/4.png" alt="image">
-<img src="assets/img/icon/white-4.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/icon/4.png') }}" alt="image">
+<img src="{{ asset('assets/assetpage/img/icon/white-4.png') }}" alt="image">
 </div>
 <h3>Join as a member</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod tempor incididun labore voluptatem accusantium.</p>
@@ -84,7 +85,7 @@ Be Member +
 <i class="flaticon-care-about-plants"></i>
 About us
 </span>
-<h3><?php print $siteName2;?></h3>
+<h3>{{ $allbasics->sitename1 }}</h3>
 <p class="main-color">
 Your support will help us to make life better living for poor vulnerable children.
 </p>
@@ -104,8 +105,8 @@ More about us
 </div>
 <div class="col-lg-6">
 <div class="about-image about-four">
-<img src="assets/img/about/1.jpg" class="shadow" alt="image">
-<img src="assets/img/about/2.jpg" class="shadow" alt="image">
+<img src="{{ asset('assets/assetpage/img/about/1.jpg') }}" class="shadow" alt="image">
+<img src="{{ asset('assets/assetpage/img/about/2.jpg') }}" class="shadow" alt="image">
 <div class="about-video">
 <a href="https://www.youtube.com/watch?v=uemObN8_dcw" class="video-btn popup-youtube">
 <i class="bx bx-play"></i>
@@ -222,7 +223,7 @@ What We Do
 <div class="col-lg-3 col-md-6 col-sm-6">
 <div class="solve-item">
 <div class="icon">
-<img src="assets/img/solve/1.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/solve/1.png') }}" alt="image">
 </div>
 <h3>Education Facilities</h3>
 <p>Roknin sanso dolor sit amet consecteturadipisicingitsed do eiusmod tempor.</p>
@@ -231,7 +232,7 @@ What We Do
 <div class="col-lg-3 col-md-6 col-sm-6">
 <div class="solve-item">
 <div class="icon">
-<img src="assets/img/solve/2.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/solve/2.png') }}" alt="image">
 </div>
 <h3>Medical Facilities</h3>
 <p>Dobani Kulie dolor sit amet consecteturadipisicingitsed do eiusmod tempor.</p>
@@ -240,7 +241,7 @@ What We Do
 <div class="col-lg-3 col-md-6 col-sm-6">
 <div class="solve-item">
 <div class="icon">
-<img src="assets/img/solve/3.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/solve/3.png') }}" alt="image">
 </div>
 <h3>Healthy Food</h3>
 <p>Horith ipsum dolor sit amet consecteturadipisicingitsed do eiusmod tempor.</p>
@@ -249,7 +250,7 @@ What We Do
 <div class="col-lg-3 col-md-6 col-sm-6">
 <div class="solve-item">
 <div class="icon">
-<img src="assets/img/solve/4.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/solve/4.png') }}" alt="image">
 </div>
 <h3>Pure Water</h3>
 <p>Warek ipsum dolor sit amet consecteturadipisicingitsed do eiusmod tempor.</p>
@@ -265,7 +266,7 @@ What We Do
 <div class="row">
 <div class="col-lg-6 p-0">
 <div class="mission-image">
-<img src="assets/img/mission.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/mission.png') }}" alt="image">
 </div>
 </div>
 <div class="col-lg-6">
@@ -340,7 +341,7 @@ Our Mission
 <i class="flaticon-support"></i>
 Meet Our Team
 </span>
-<h2>Talented Team behind <?php print $siteName2;?></h2>
+<h2>Talented Team behind {{ $allbasics->sitename1 }}</h2>
 <p>Quis ipsum suspendice consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendices gravida.</p>
 </div>
 </div>
@@ -358,7 +359,7 @@ Meet Our Team
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="assets/img/team/7.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/team/7.png') }}" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -389,7 +390,7 @@ Meet Our Team
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="assets/img/team/8.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/team/8.png') }}" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -420,7 +421,7 @@ Meet Our Team
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="assets/img/team/9.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/team/9.png') }}" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -451,7 +452,7 @@ Meet Our Team
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="assets/img/team/10.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/team/10.png') }}" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -620,88 +621,6 @@ Calfornia City
 </section>
 
 
-<!--<section class="testimonials-section pt-140 pb-100">
-<div class="container">
-<div class="section-title">
-<span>
-<i class="flaticon-testimonial"></i>
-Testimonials
-</span>
-<h2>Don’t Believe Us? See review</h2>
-</div>
-<div class="testimonials-slider owl-carousel owl-theme">
-<div class="testimonials-item">
-<div class="row">
-<div class="col-lg-3">
-<div class="testimonials-info">
-<img src="assets/img/testimonials/1.jpg" alt="image">
-<h3>Juhan Luis</h3>
-<span>Charity Bingo <b>Uk</b></span>
-<ul class="social-info">
-<li>
-<i class='bx bxs-star'></i>
-</li>
-<li>
-<i class='bx bxs-star'></i>
-</li>
-<li>
-<i class='bx bxs-star'></i>
-</li>
-<li>
-<i class='bx bxs-star'></i>
-</li>
-<li>
-<i class='bx bxs-star'></i>
-</li>
-</ul>
-</div>
-</div>
-<div class="col-lg-9">
-<h3>Precious Journey With You”</h3>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, autem totam. Et ipsam similique consequatur! Numquam, inventore delectus sequi, ullam, placeat molestias velit dolore praesentium ea distinctio cum vitae aperiam Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, veniam reprehenderit. Id sed itaque quam voluptates deleniti autem facilis sequi! Voluptatibus voluptas dolorum nisi tenetur laboriosam modi quis.</p>
-</div>
-</div>
-</div>
-<div class="testimonials-item">
-<div class="row">
-<div class="col-lg-3">
-<div class="testimonials-info">
-<img src="assets/img/testimonials/2.jpg" alt="image">
-<h3>juhon Dew</h3>
-<span>Charity Bingo <b>Canada</b></span>
-<ul class="social-info">
-<li>
-<i class='bx bxs-star'></i>
-</li>
-<li>
-<i class='bx bxs-star'></i>
-</li>
-<li>
-<i class='bx bxs-star'></i>
-</li>
-<li>
-<i class='bx bxs-star'></i>
-</li>
-<li>
-<i class='bx bxs-star'></i>
-</li>
-</ul>
-</div>
-</div>
-<div class="col-lg-9">
-<h3>Precious Journey With You”</h3>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, autem totam. Et ipsam similique consequatur! Numquam, inventore delectus sequi, ullam, placeat molestias velit dolore praesentium ea distinctio cum vitae aperiam Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, veniam reprehenderit. Id sed itaque quam voluptates deleniti autem facilis sequi! Voluptatibus voluptas dolorum nisi tenetur laboriosam modi quis.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="testimonials-shape">
-<img src="assets/img/testimonials/shape.png" alt="image">
-</div>
-</section>-->
-<!--Testimonial-->
-
 <section class="donate-section ptb-100">
 <div class="container">
 <div class="section-title">
@@ -714,8 +633,8 @@ Donate Now
 </div>
 </div>
 <div class="default-shape">
-<img src="assets/img/donate/1.png" alt="image">
-<img src="assets/img/donate/2.png" alt="image">
+<img src="{{ asset('assets/assetpage/img/donate/1.png') }}" alt="image">
+<img src="{{ asset('assets/assetpage/img/donate/2.png') }}" alt="image">
 </div>
 </section>
 
@@ -732,7 +651,7 @@ Our Blog
 <div class="row">
 <div class="col-lg-4 col-md-6 col-sm-6">
 <div class="single-blog">
-<img src="assets/img/blog/1.jpg" alt="image">
+<img src="{{ asset('assets/assetpage/img/blog/1.jpg') }}" alt="image">
 <div class="content">
  <a href="#">
 <i class='bx bx-user'></i>
@@ -749,7 +668,7 @@ Poverty not only money it can be food sometimes
 </div>
 <div class="col-lg-4 col-md-6 col-sm-6">
 <div class="single-blog">
-<img src="assets/img/blog/2.jpg" alt="image">
+<img src="{{ asset('assets/assetpage/img/blog/2.jpg') }}" alt="image">
 <div class="content">
 <a href="#">
 <i class='bx bx-user'></i>
@@ -766,7 +685,7 @@ Strawberry-Banana Quinoa Muffins Recipe for poor
 </div>
 <div class="col-lg-4 col-md-6 col-sm-6 offset-sm-3 offset-lg-0">
 <div class="single-blog">
-<img src="assets/img/blog/3.jpg" alt="image">
+<img src="{{ asset('assets/assetpage/img/blog/3.jpg') }}" alt="image">
 <div class="content">
 <a href="#">
 <i class='bx bx-user'></i>

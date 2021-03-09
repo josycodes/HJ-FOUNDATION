@@ -1,6 +1,8 @@
 <?php
-$title = 'HJ Foundation | Where charity lives'; $active3='active';
-require_once('head.php');?>
+$title = 'HJ Foundation | Where charity lives';
+$active3='active';
+?>
+@include('layoutpages.head')
 <body>
 
 <div class="preloader">
@@ -10,7 +12,7 @@ require_once('head.php');?>
 </div>
 </div>
 
-<?php require_once('header.php');?>
+@include('layoutpages.header')
 
 <div class="page-title-area">
     <div class="d-table">
@@ -19,7 +21,7 @@ require_once('head.php');?>
                 <div class="page-title-content">
                     <h2>News</h2>
                     <ul>
-                        <li><a href="./">Home</a></li>
+                        <li><a href="{{ route('/') }}">Home</a></li>
                         <li>News</li>
                     </ul>
                 </div>
@@ -35,7 +37,7 @@ require_once('head.php');?>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="assets/img/blog/1.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/blog/1.jpg') }}" alt="image">
                             <div class="content">
                                 <span>Poor, 22 January</span>
                                 <h3>
@@ -49,7 +51,7 @@ require_once('head.php');?>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="assets/img/blog/2.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/blog/2.jpg') }}" alt="image">
                             <div class="content">
                                 <span>Food, 21 December</span>
                                 <h3>
@@ -63,7 +65,7 @@ require_once('head.php');?>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="assets/img/blog/1.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/blog/1.jpg') }}" alt="image">
                             <div class="content">
                                 <span>Poor, 22 January</span>
                                 <h3>
@@ -77,7 +79,7 @@ require_once('head.php');?>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="assets/img/blog/2.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/blog/2.jpg') }}" alt="image">
                             <div class="content">
                                 <span>Food, 21 December</span>
                                 <h3>
@@ -91,7 +93,7 @@ require_once('head.php');?>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="assets/img/blog/3.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/blog/3.jpg') }}" alt="image">
                             <div class="content">
                                 <span>Healthy, 21 June</span>
                                 <h3>
@@ -105,7 +107,7 @@ require_once('head.php');?>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="assets/img/blog/4.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/blog/4.jpg') }}" alt="image">
                             <div class="content">
                                 <span>Poor, 22 January</span>
                                 <h3>
@@ -119,7 +121,7 @@ require_once('head.php');?>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="assets/img/blog/5.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/blog/5.jpg') }}" alt="image">
                             <div class="content">
                                 <span>Food, 21 December</span>
                                 <h3>
@@ -133,7 +135,7 @@ require_once('head.php');?>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="assets/img/blog/6.jpg" alt="image">
+                            <img src="{{ asset('assets/assetpage/img/blog/6.jpg') }}" alt="image">
                             <div class="content">
                                 <span>Healthy, 21 June</span>
                                 <h3>
@@ -264,4 +266,4 @@ require_once('head.php');?>
 </section>
 
 
-<?php require_once('footer.php');?>
+@include('layoutpages.footer')

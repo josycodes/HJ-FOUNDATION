@@ -180,7 +180,7 @@ return [
     | A custom CSS class for the modal:
     |
     */
-
+    
     'customClass' => [
 
         'container' => env('SWEET_ALERT_CONTAINER_CLASS'),
@@ -199,3 +199,4 @@ return [
     ],
 
 ];
+
