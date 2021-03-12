@@ -866,14 +866,7 @@
   </script>
 
 <script type="text/javascript" src="{{ asset('assets/scripts/ckeditor/ckeditor.js') }}"></script>
-
-<script type="application/javascript"/>
-$(document).ready(function (){
-    CKEDITOR.replace( 'editor' );
-});
-</script>
-
-    <script>
+<script>
 
     $(function() {  
   $('.yearpicker').yearpicker();

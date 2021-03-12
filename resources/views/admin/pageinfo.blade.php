@@ -166,7 +166,7 @@
             
              $('#submit-pic').html('Uploading....');
 
-							//image submission to server starts here 
+			//image submission to server starts here 
               const myForm = $('form#upload-image-form');
               
                $.ajax({
@@ -178,13 +178,12 @@
                         })
                         .done((response) => {
                              if (response.status == 1) {
-                               //this.reset();
-                               alert('Success');
-                            //    alert()->success('SuccessAlert','Image has been uploaded successfully');
+                              
+                            swal('success','Image has been uploaded successfully','success');
                              }
                         })
                         .fail(() => {
-                        
+                            
                         })
                         .always(() => $('#submit-pic').html('Uploaded'));
                         
@@ -222,8 +221,8 @@
                     success: function(response){
 
                         if(response.status == 1){
-                            swal("Success", "Updated Successfully!!!", "success");
-                            $("#submit").html('Updated successfully');
+                            swal("Success", response.message, "success");
+                            $("#submit").html(response.message);
 
                         }
                         else{

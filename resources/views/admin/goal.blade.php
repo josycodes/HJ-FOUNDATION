@@ -4,45 +4,72 @@
 
 <div class="app-main__outer">
     <div class="app-main__inner">
-              
+        
      
         <div class="tabs-animation">
+             <form method="post" id="upload-goal-form" enctype="multipart/form-data" >
+                @csrf 
         <div class="mb-3 card element-block-example">
             <div class="card-body">
-                <h5 class="card-title">Edit Goal Content</h5>
-                <textarea name="content" id="editor">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-                    <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-
-                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-
-                    <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-
-                    <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-
-                    <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-
-                    <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
-
-                    <p>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
-            </textarea>
-
-            
+                <h5 class="card-title">Edit Goals</h5>
+               
+                <textarea name="content" id="editor">{{ $abouts->goal }}</textarea>
+           
+               
             </div>
-
-
-
-
         </div>
         <center>
 
-        <button class="btn btn-primary mr-2 mb-2 block-element-btn-example-3">
-            Update Goal Content
+        <button id="submit-goal" class="btn btn-primary mr-2 mb-2 block-element-btn-example-3">
+            Update Goal
         </button></center>
-        </div>
+       </form> </div> 
     </div>
 
     @include('layout.footerdash');
+   
+    <script>
+        CKEDITOR.replace( 'editor' );
+    </script>
+    
+    <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+
+         $("#submit-goal").click(function(e) {
+        e.preventDefault();
+        //  var aims = $("#editor").val();
+         var goal = CKEDITOR.instances.editor.getData();
+         if(goal == ""){
+            swal("Error","Please Fill all fields","error");
+            return;
+         }
+
+         const myForm = $('form#upload-goal-form');
+        //  myForm.attr('action'),
+         $.ajax({
+                url : "{{ route('UploadGoal') }}",
+                type : 'post',
+                data : {content:goal},
+                    success: function(response){
+                       
+                        if(JSON.parse(response) == 1){
+                            
+                            swal("Success", "Uploaded Successfully", "success");
+                            $("#submit-goal").html("Uploaded");
+                        
+                        }
+                        else{
+                           
+                            swal("Error","Not Uploaded", "error");
+                            $("#submit-goal").html("Not Uploaded");
+                        }
+                    
+                    }
+            });
+
+         });
+    </script>
