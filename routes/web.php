@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BasicController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BoardController;
+use App\Http\Controllers\ProgrammeController;
+use App\Http\Controllers\ManagementController;
 use RealRashid\SweetAlert\Facades\Alert;
-use App\Models\Basic;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,137 +19,128 @@ use App\Models\Basic;
 |
 */
 
-Route::get('/', function () {
-    $basic = Basic::find(1);
-    return view('pages.index', ['allbasics' => $basic]);
-})->name('/');
+Route::get('/', [BasicController::class , 'viewIndex'])->name('/');
 
-Route::get('About Us', function () {
-    $basic = Basic::find(1);
-    return view('pages.about', ['allbasics' => $basic]);
-})->name('About Us');
+Route::get('About Us', [BasicController::class, 'viewAbout'])->name('About Us');
 
-Route::get('Aims-Objectives', function () {
-    $basic = Basic::find(1);
-    return view('pages.aims-objectives', ['allbasics' => $basic]);
-})->name('Aims-Objectives');
+Route::get('Aims-Objectives', [BasicController::class,'viewAims'])->name('Aims-Objectives');
 
-Route::get('Board Of Trustees', function () {
-    $basic = Basic::find(1);
-    return view('pages.board-of-trustees', ['allbasics' => $basic]);
-})->name('Board Of Trustees');
+Route::get('Board Of Trustees', [BasicController::class,'viewBot'])->name('Board Of Trustees');
 
-Route::get('Management Team', function () {
-    $basic = Basic::find(1);
-    return view('pages.management-team', ['allbasics' => $basic]);
-})->name('Management Team');
+Route::get('Management Team', [BasicController::class ,'ViewManagement'])->name('Management Team');
 
-Route::get('Frequently Asked Questions', function () {
-    $basic = Basic::find(1);
-    return view('pages.faq', ['allbasics' => $basic]);
-})->name('Frequently Asked Questions');
+Route::get('Frequently Asked Questions', [BasicController::class , 'viewFaq'])->name('Frequently Asked Questions');
 
-Route::get('Gallery', function () {
-    $basic = Basic::find(1);
-    return view('pages.gallery', ['allbasics' => $basic]);
-})->name('Gallery');
+Route::get('Gallery', [BasicController::class, 'viewGallery'])->name('Gallery');
 
-Route::get('Events', function () {
-    $basic = Basic::find(1);
-    return view('pages.events', ['allbasics' => $basic]);
-})->name('Events');
+Route::get('Events', [BasicController::class , 'viewEvents'])->name('Events');
 
-Route::get('Event Detail', function () {
-    $basic = Basic::find(1);
-    return view('pages.event-detail', ['allbasics' => $basic]);
-})->name('Event Detail');
+Route::get('Event Detail', [BasicController::class , 'findEvent'])->name('Event Detail');
 
-Route::get('News', function () {
-    $basic = Basic::find(1);
-    return view('pages.news', ['allbasics' => $basic]);
-})->name('News');
+Route::get('News', [BasicController::class , 'viewNews'])->name('News');
 
-Route::get('News Detail', function () {
-    $basic = Basic::find(1);
-    return view('pages.news-detail', ['allbasics' => $basic]);
-})->name('News Detail');
+Route::get('News Detail', [BasicController::class , 'findNews'])->name('News Detail');
 
-Route::get('Awareness', function () {
-    $basic = Basic::find(1);
-    return view('pages.awareness', ['allbasics' => $basic]);
-})->name('Awareness');
+Route::get('Awareness', [BasicController::class , 'viewAwarness'])->name('Awareness');
 
-Route::get('Research', function () {
-    $basic = Basic::find(1);
-    return view('pages.research', ['allbasics' => $basic]);
-})->name('Research');
+Route::get('Research', [BasicController::class , 'viewResearch'])->name('Research');
 
-Route::get('Fund Raising', function () {
-    $basic = Basic::find(1);
-    return view('pages.fund-raising', ['allbasics' => $basic]);
-})->name('Fund Raising');
+Route::get('Fund Raising', [BasicController::class, 'viewFunds'])->name('Fund Raising');
 
-Route::get('Memebership Categories', function () {
-    $basic = Basic::find(1);
-    return view('pages.membership-categories', ['allbasics' => $basic]);
-})->name('Memebership Categories');
+Route::get('Memebership Categories', [BasicController::class , 'viewMemeber'])->name('Memebership Categories');
 
-Route::get('Benefits To Members', function () {
-    $basic = Basic::find(1);
-    return view('pages.benefits-to-members', ['allbasics' => $basic]);
-})->name('Benefits To Members');
+Route::get('Benefits To Members', [BasicController::class, 'viewBenefits'])->name('Benefits To Members');
 
-Route::get('Membership Application Forms', function () {
-    $basic = Basic::find(1);
-    return view('pages.membership-application-forms', ['allbasics' => $basic]);
-})->name('Membership Application Forms');
+Route::get('Membership Application Forms', [BasicController::class , 'viewMemeberForm'])->name('Membership Application Forms');
 
-Route::get('Volunteer Opportunities', function () {
-    $basic = Basic::find(1);
-    return view('pages.volunteer-opportunities', ['allbasics' => $basic]);
-})->name('Volunteer Opportunities');
+Route::get('Volunteer Opportunities', [BasicController::class , 'viewVolunteer'])->name('Volunteer Opportunities');
 
-Route::get('Contact Us', function () {
-    $basic = Basic::find(1);
-    return view('pages.contact', ['allbasics' => $basic]);
-})->name('Contact Us');
+Route::get('Contact Us', [BasicController::class , 'viewContact'])->name('Contact Us');
 
-Route::get('Donate', function () {
-    $basic = Basic::find(1);
-    return view('pages.donate', ['allbasics' => $basic]);
-})->name('Donate');
+Route::get('Donate', [BasicController::class , 'viewDonate'])->name('Donate');
 
 
 
 
 
-
+require __DIR__.'/auth.php';
 ///DASHBOARD PAGES
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/vision', function () {
-    return view('admin.vision');
-})->name('vision');
+Route::get('/vision', [BasicController::class, 'viewVision'])->name('vision');
 
-Route::get('/goal', function () {
-    return view('admin.goal');
-})->name('goal');
+Route::get('/goal', [BasicController::class, 'viewAdminGoal'])->name('goal');
 
-Route::get('/aims', function () {
-    return view('admin.aims');
-})->name('aims');
+Route::get('/aims', [BasicController::class, 'viewAboutAims'])->name('aims');
 
-Route::get('/pageinfo', function () {
-    $basic = Basic::find(1);
-    return view('admin.pageinfo',['allbasics' => $basic]);
-})->name('pageinfo');
+Route::get('/about', [BasicController::class , 'viewAdminAbout'])->name('about');
 
-require __DIR__.'/auth.php';
+Route::get('/mission', [BasicController::class , 'viewAdminMission'])->name('mission');
 
+Route::get('/pageinfo', [BasicController::class , 'viewAdminPageinfo'])->name('pageinfo');
+
+Route::get('Add New Board of Trustee', function (){
+    return view('admin.addboardoftrustee');
+})->name('Add New Board of Trustee');
+
+Route::get('All Board of Trustees', [BoardController::class , 'viewAllbot'])->name('All Board of Trustees');
+
+Route::get('Edit Board of Trustees/{id}', [BoardController::class , 'editBoard'])->name('Edit Board of Trustees');
+
+Route::get('/AdminAwareness', [ProgrammeController::class , 'viewAwareness'])->name('AdminAwareness');
+
+Route::get('/AdminResearch', [ProgrammeController::class , 'viewResearch'])->name('AdminResearch');
+
+Route::get('/AdminFunds', [ProgrammeController::class , 'viewFunds'])->name('AdminFunds');
+
+Route::get('Add New Member', [ManagementController::class , 'viewManagementTeam'])->name('Add New Member');
+
+Route::get('All Member', [ManagementController::class , 'viewAllManagementTeam'])->name('All Member');
+
+
+
+//UPLOAD......
 Route::post('SubmitBasics', [BasicController::class, 'Submitbasicdata'])->name('SubmitBasics');
 
 Route::post('logoUpload', [BasicController::class, 'submitlogo'])->name('logoUpload');
 
+Route::post('UploadAims', [AboutController::class, 'UpdateAims'])->name('UploadAims');
+
+Route::post('UploadVision', [AboutController::class, 'UploadVision'])->name('UploadVision');
+
+Route::post('UploadGoal', [AboutController::class, 'UploadGoal'])->name('UploadGoal');
+
+Route::post('UploadMission', [AboutController::class, 'UploadMission'])->name('UploadMission');
+
+Route::post('UploadAbout', [AboutController::class, 'UploadAbout'])->name('UploadAbout');
+
+Route::post('UploadBoardofTrustee', [BoardController::class, 'CreateBot'])->name('UploadBoardofTrustee');
+
+ //EDIT BOARD OF TRUSTEE
+Route::post('EditBoardofTrustee/{id}', [BoardController::class, 'UpdateBot'])->name('EditBoardofTrustee');
+
+//DELETE BOARD OF TRUSTEE
+Route::get('DeleteBoard/{id}' , [BoardController::class , 'deleteBot'])->name('DeleteBoard');
+
+//UPLOAD AWARENESS CONTENT
+Route::post('UploadAwareness', [ProgrammeController::class , 'uploadAwareness'])->name('UploadAwareness');
+
+//UPLOAD RESEARCH CONTENT
+Route::post('UploadResearch' , [ProgrammeController::class , 'uploadResearch'])->name('UploadResearch');
+
+//UPLOAD FUND RAISING CONTENT
+Route::post('UploadFund' , [ProgrammeController::class , 'uploadFund'])->name('UploadFund');
+
+//ADD MANAGEMENT TEAM
+Route::post('Add Management' , [ManagementController::class , 'addManagement'])->name('Add Management');
+
+//EDIT MANAGEMENT TEAM
+Route::get('EditManagement/{id}', [ManagementController::class, 'UpdateManagement'])->name('EditManagement');
+
+Route::post('Update Management/{id}' , [ManagementController::class , 'editManage'])->name('Update Management');
+
+//DELETE MANAGEMENT TEAM
+Route::get('DeleteManagement/{id}' , [ManagementController::class , 'deleteManagement'])->name('DeleteManagement');
 

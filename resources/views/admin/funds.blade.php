@@ -7,25 +7,20 @@
         
      
         <div class="tabs-animation">
-             <form method="post" id="upload-vision-form" enctype="multipart/form-data" >
+             <form method="post" id="upload-fund-form" enctype="multipart/form-data" >
                 @csrf 
         <div class="mb-3 card element-block-example">
             <div class="card-body">
-                <h5 class="card-title">Edit Vision</h5>
+                <h5 class="card-title">Edit Fund Raising Content</h5>
                
-                <textarea name="content" id="editor">{{ $abouts->vision }}</textarea>
-           
-               
+                <textarea name="content" id="editor">{{ $programme->fund }}</textarea>
+    
             </div>
-
-
-
-
         </div>
         <center>
 
-        <button id="submit-vision" class="btn btn-primary mr-2 mb-2 block-element-btn-example-3">
-            Update Vision
+        <button id="submit-fund" class="btn btn-primary mr-2 mb-2 block-element-btn-example-3">
+            Update Fund
         </button></center>
        </form> </div> 
     </div>
@@ -43,33 +38,33 @@
         }
         });
 
-         $("#submit-vision").click(function(e) {
+         $("#submit-fund").click(function(e) {
         e.preventDefault();
         //  var aims = $("#editor").val();
-         var vision = CKEDITOR.instances.editor.getData();
-         if(vision == ""){
+         var fund = CKEDITOR.instances.editor.getData();
+         if(fund == ""){
             swal("Error","Please Fill all fields","error");
             return;
          }
 
-         const myForm = $('form#upload-vision-form');
+         const myForm = $('form#upload-fund-form');
         //  myForm.attr('action'),
          $.ajax({
-                url : "{{ route('UploadVision') }}",
+                url : "{{ route('UploadFund') }}",
                 type : 'post',
-                data : {content:vision},
+                data : {content:fund},
                     success: function(response){
                        
                         if(JSON.parse(response) == 1){
                             
                             swal("Success", "Uploaded Successfully", "success");
-                            $("#submit-vision").html("Uploaded");
+                            $("#submit-fund").html("Uploaded");
                         
                         }
                         else{
                            
                             swal("Error","Not Uploaded", "error");
-                            $("#submit-vision").html("Not Uploaded");
+                            $("#submit-fund").html("Not Uploaded");
                         }
                     
                     }

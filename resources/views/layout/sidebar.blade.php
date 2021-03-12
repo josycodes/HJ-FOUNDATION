@@ -29,7 +29,8 @@
                     </span>
                 </button>
             </span>
-        </div>    <div class="scrollbar-sidebar">
+        </div>    
+        <div class="scrollbar-sidebar">
             <div class="app-sidebar__inner">
                 <ul class="vertical-nav-menu">
                     <li class="app-sidebar__heading">Menu</li>
@@ -38,47 +39,7 @@
                             <i class="metismenu-icon fa fa-rocket"></i>Dashboards
                             
                         </a>
-                        {{--  <ul      >
-                            <li>
-                                <a href="index-2.html"  class="mm-active" >
-                                    <i class="metismenu-icon"></i>Analytics
-                                </a>
-                            </li>
-                            <li>
-                                <a href="dashboards-commerce.html" >
-                                    <i class="metismenu-icon"></i>Commerce
-                                </a>
-                            </li>
-                            <li>
-                                <a href="dashboards-sales.html" >
-                                    <i class="metismenu-icon">
-                                    </i>Sales
-                                </a>
-                            </li>
-                            <li  >
-                                <a href="#">
-                                    <i class="metismenu-icon"></i> Minimal
-                                    <i class="metismenu-state-icon fa fa-caret-up"></i>
-                                </a>
-                                <ul  >
-                                    <li>
-                                        <a href="dashboards-minimal-1.html" >
-                                            <i class="metismenu-icon"></i>Variation 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="dashboards-minimal-2.html" >
-                                            <i class="metismenu-icon"></i>Variation 2
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="dashboards-crm.html" >
-                                    <i class="metismenu-icon"></i> CRM
-                                </a>
-                            </li>
-                        </ul>  --}}
+                       
                     </li>
                     
                     <li class="app-sidebar__heading">Basic Information</li>
@@ -90,8 +51,25 @@
                         </a>
                         <ul>
                             <li>
+                                <a href="{{ route('about') }}" >
+                                    <i class="metismenu-icon"></i>About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('aims') }}" >
+                                    <i class="metismenu-icon"></i>Aims and Objectives
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('vision') }}">
                                     <i class="metismenu-icon"></i> Vision
+                                   
+                                </a>
+                               
+                            </li>
+                            <li>
+                                <a href="{{ route('mission') }}">
+                                    <i class="metismenu-icon"></i> Mission
                                    
                                 </a>
                                
@@ -101,11 +79,7 @@
                                     <i class="metismenu-icon"></i>Goal
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('aims') }}" >
-                                    <i class="metismenu-icon"></i>Aims and Objectives
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a>
                                     <i class="metismenu-icon"></i>Board Of Trustees
@@ -113,30 +87,16 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="elements-buttons-standard.html" >
-                                            <i class="metismenu-icon"></i>Goal
+                                        <a href="{{ route('Add New Board of Trustee') }}" >
+                                            <i class="metismenu-icon"></i>Add New
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="elements-buttons-pills.html" >
-                                            <i class="metismenu-icon"></i>Aims and Objectives
+                                        <a href="{{ route('All Board of Trustees') }}" >
+                                            <i class="metismenu-icon"></i>View All
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="elements-buttons-square.html" >
-                                            <i class="metismenu-icon"></i>Square
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-buttons-shadow.html" >
-                                            <i class="metismenu-icon"></i>Shadow
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-buttons-icons.html" >
-                                            <i class="metismenu-icon"></i>With Icons
-                                        </a>
-                                    </li>
+                                    
                                 </ul>
                             </li> 
                             <li>
@@ -146,30 +106,16 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="elements-buttons-standard.html" >
-                                            <i class="metismenu-icon"></i>Goal
+                                        <a href="{{ route('Add New Member') }}" >
+                                            <i class="metismenu-icon"></i>Add New
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="elements-buttons-pills.html" >
-                                            <i class="metismenu-icon"></i>Aims and Objectives
+                                        <a href="{{ route('All Member') }}" >
+                                            <i class="metismenu-icon"></i>View All
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="elements-buttons-square.html" >
-                                            <i class="metismenu-icon"></i>Square
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-buttons-shadow.html" >
-                                            <i class="metismenu-icon"></i>Shadow
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="elements-buttons-icons.html" >
-                                            <i class="metismenu-icon"></i>With Icons
-                                        </a>
-                                    </li>
+                                   
                                 </ul>
                             </li>
                             
@@ -294,19 +240,19 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('AdminAwareness') }}">
                                     <i class="metismenu-icon"></i> Awarness 
                                    
                                 </a>
                                
                             </li>
                             <li>
-                                <a href="elements-dropdowns.html" >
+                                <a href="{{ route('AdminResearch') }}" >
                                     <i class="metismenu-icon"></i>Research
                                 </a>
                             </li>
                             <li>
-                                <a href="elements-icons.html" >
+                                <a href="{{ route('AdminFunds') }}" >
                                     <i class="metismenu-icon"></i>Fund Raising</a>
                             </li>
                            

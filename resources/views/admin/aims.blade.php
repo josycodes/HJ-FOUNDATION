@@ -4,33 +4,18 @@
 
 <div class="app-main__outer">
     <div class="app-main__inner">
-              
+        
      
         <div class="tabs-animation">
+             <form method="post" id="upload-aims-form" enctype="multipart/form-data" >
+                @csrf 
         <div class="mb-3 card element-block-example">
             <div class="card-body">
                 <h5 class="card-title">Edit Aims and Objective</h5>
-                <textarea name="content" id="editor">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-                    <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-
-                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-
-                    <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-
-                    <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-
-                    <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-
-                    <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
-
-                    <p>Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
-            </textarea>
-
-            
+               
+                <textarea name="content" id="editor">{{ $abouts->aims }}</textarea>
+           
+               
             </div>
 
 
@@ -39,10 +24,56 @@
         </div>
         <center>
 
-        <button class="btn btn-primary mr-2 mb-2 block-element-btn-example-3">
+        <button id="submit-aims" class="btn btn-primary mr-2 mb-2 block-element-btn-example-3">
             Update Aims and Objective
         </button></center>
-        </div>
+       </form> </div> 
     </div>
 
     @include('layout.footerdash');
+   
+    <script>
+        CKEDITOR.replace( 'editor' );
+    </script>
+    
+    <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+
+         $("#submit-aims").click(function(e) {
+        e.preventDefault();
+        //  var aims = $("#editor").val();
+         var aims = CKEDITOR.instances.editor.getData();
+         if(aims == ""){
+            swal("Error","Please Fill all fields","error");
+            return;
+         }
+
+         const myForm = $('form#upload-aims-form');
+        //  myForm.attr('action'),
+         $.ajax({
+                url : "{{ route('UploadAims') }}",
+                type : 'post',
+                data : {content:aims},
+                    success: function(response){
+                       
+                        if(JSON.parse(response) == 1){
+                            
+                            swal("Success", "Uploaded Successfully", "success");
+                            $("#submit-aims").html("Uploaded");
+                        
+                        }
+                        else{
+                           
+                            swal("Error","Not Uploaded", "error");
+                            $("#submit-aims").html("Not Uploaded");
+                        }
+                    
+                    }
+            });
+
+         });
+    </script>
