@@ -19,6 +19,20 @@
                         <h3>Email Us</h3>
                         <span>{{ $allbasics->siteemail }}</span>
                     </div>
+                
+                    <h3>Newsletter</h3>
+                    <form method="post" id="submit-email">
+                        <div class="form-group">
+                            <input type="email" id="subcribeemail" name="subcribeemail" class="form-control" required placeholder="Email">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <br />
+                         <button class="default-btn submit" name="submitemail" id="submitemail">
+                        Subscribe
+                        <i class="flaticon-right"></i>
+                        <span></span>
+                    </button>
+                    </form>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -26,37 +40,42 @@
                     <h3>About</h3>
                     <ul class="footer-quick-links">
                         <li>
-                            <a href="about">
+                            <a href="{{ route('About-Us') }}">
                                 About Us
                             </a>
                         </li>
                         <li>
-                            <a href="board-of-trustees">
+                            <a href="{{ route('Board-Of-Trustees') }}">
                                 Board of Trustees
                             </a>
                         </li>
                         <li>
-                            <a href="management-team">
+                            <a href="{{ route('Management-Team') }}">
                                 Management Team
                             </a>
                         </li>
                         <li>
-                            <a href="news-events">
-                                News/Events
+                            <a href="{{ route('News') }}">
+                                News
                             </a>
                         </li>
                         <li>
-                            <a href="contact">
+                            <a href="{{ route('Events') }}">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('Contact-Us') }}">
                                 Contact Us
                             </a>
                         </li>
                         <li>
-                            <a href="gallery">
+                            <a href="{{ route('Gallery') }}">
                                 Gallery
                             </a>
                         </li>
                         <li>
-                            <a href="faq">
+                            <a href="{{ route('Frequently-Asked-Questions') }}">
                                 Frequently Asked Question
                             </a>
                         </li>
@@ -68,37 +87,37 @@
                     <h3>Our Services</h3>
                     <ul class="footer-quick-links">
                         <li>
-                            <a href="donate">
+                            <a href="{{ route('Donate') }}">
                                 Donate
                             </a>
                         </li>
                         <li>
-                            <a href="awareness">
+                            <a href="{{ route('Awareness') }}">
                                 Awareness
                             </a>
                         </li>
                         <li>
-                            <a href="fund-raising">
+                            <a href="{{ route('Fund-Raising') }}">
                                 Fund Raising
                             </a>
                         </li>
                         <li>
-                            <a href="volunteer-opportunities">
+                            <a href="{{ route('Volunteer-Opportunities') }}">
                                 Volunteer
                             </a>
                         </li>
                         <li>
-                            <a href="membership-categories">
+                            <a href="{{ route('Memebership-Categories') }}">
                                 Member Categories
                             </a>
                         </li>
                         <li>
-                            <a href="benefits-to-members">
+                            <a href="{{ route('Benefits-To-Members') }}">
                                 Benefits
                             </a>
                         </li>
                         <li>
-                            <a href="membership-application-forms">
+                            <a href="{{ route('Membership-Application-Forms') }}">
                                 Membership Form
                             </a>
                         </li>
@@ -124,6 +143,25 @@
                     </div>
                 </div>
             </div>
+            {{-- <div class="col-lg-5 offset-lg-7 col-md-12 col-sm-6">
+                <div class="single-footer-widget">
+                    <h3>Newsletter</h3>
+                    <form method="post" id="submit-email">
+                        <div class="form-group">
+                            <input type="email" id="subcribeemail" class="form-control" required placeholder="Email">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <br />
+                         <button class="default-btn submit" name="submitemail" id="submitemail">
+                        Subscribe
+                        <i class="flaticon-right"></i>
+                        <span></span>
+                    </button>
+                    </form>
+                </div>
+                
+            </div> --}}
+            
         </div>
     </div>
     <div class="copyright-area">
@@ -167,7 +205,7 @@
 </div>
 
 
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
 <script src="{{ asset('assets/assetpage/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/assetpage/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/assetpage/js/bootstrap.min.js') }}"></script>
@@ -197,3 +235,43 @@
 <script src="{{ asset('assets/assetpage/js/rev-slider-custom.js') }}"></script>
 </body>
 </html>
+
+
+<script>
+     $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    
+    $("#submitemail").click(function(e) {
+    
+            e.preventDefault();
+           
+            var email = $('#subcribeemail').val();
+           
+            
+            if(email === ""){
+                swal("Error", "Please enter your email","error");
+            }else{
+            
+                $.ajax({
+                    url: "{{ route('Subscribe-Email') }}",
+                    data: {email:email},
+                    type : 'POST',
+                    success: function(response){
+                        if(JSON.parse(response)==1){
+                            swal("Success", "You have subscribed to our NewsLetters","success");
+                            window.location.reload();
+                        }else{
+                            swal("Error", "Unexpected Error!!! Try Again","error")
+                        }
+                    
+                        
+
+                    }
+                });
+            }
+
+    });
+</script>

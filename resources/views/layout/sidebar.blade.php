@@ -87,12 +87,12 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="{{ route('Add New Board of Trustee') }}" >
+                                        <a href="{{ route('Add-New-Board-of-Trustee') }}" >
                                             <i class="metismenu-icon"></i>Add New
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('All Board of Trustees') }}" >
+                                        <a href="{{ route('All-Board-of-Trustees') }}" >
                                             <i class="metismenu-icon"></i>View All
                                         </a>
                                     </li>
@@ -106,12 +106,12 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="{{ route('Add New Member') }}" >
+                                        <a href="{{ route('Add-New-Member') }}" >
                                             <i class="metismenu-icon"></i>Add New
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('All Member') }}" >
+                                        <a href="{{ route('All-Member') }}" >
                                             <i class="metismenu-icon"></i>View All
                                         </a>
                                     </li>
@@ -128,7 +128,7 @@
                     </li>   
                     <li class="app-sidebar__heading">Questions</li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('Admin-Frequently-Asked-Questions') }}">
                             <i class="metismenu-icon fa fa-question-circle"></i> Frequently asked questions
                             
                         </a>
@@ -143,14 +143,14 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('View-Admin-Gallery') }}">
                                     <i class="metismenu-icon"></i> New Gallery
                                    
                                 </a>
                                
                             </li>
                             <li>
-                                <a href="elements-dropdowns.html" >
+                                <a href="{{ route('View-All-Gallery') }}" >
                                     <i class="metismenu-icon"></i>View Gallery
                                 </a>
                             </li>
@@ -167,27 +167,36 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#">
-                                    <i class="metismenu-icon"></i> Memebership Categories
+                                <a href="{{ route('Admin-News') }}">
+                                    <i class="metismenu-icon"></i> Add News
                                    
                                 </a>
                                
                             </li>
                             <li>
-                                <a href="elements-dropdowns.html" >
-                                    <i class="metismenu-icon"></i>Benefit to Members
+                                <a href="{{ route('All-News') }}" >
+                                    <i class="metismenu-icon"></i>View News
                                 </a>
+                            </li>
+                         </ul>
+                    </li><li>
+                        <a href="#">
+                            <i class="metismenu-icon fa fa-newspaper"></i> Events
+                            <i class="metismenu-state-icon pe-7s-angle-down fa fa-caret-up"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{ route('Admin-Event') }}">
+                                    <i class="metismenu-icon"></i> Add Event
+                                   
+                                </a>
+                               
                             </li>
                             <li>
-                                <a href="elements-icons.html" >
-                                    <i class="metismenu-icon"></i>Memebership Application forms
-                                </a>
-                            </li><li>
-                                <a href="elements-icons.html" >
-                                    <i class="metismenu-icon"></i>Volunteer Opportunities
+                                <a href="{{ route('All-Event') }}" >
+                                    <i class="metismenu-icon"></i>View Events
                                 </a>
                             </li>
-                          
                         </ul>
                     </li>
                     
@@ -208,14 +217,14 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('View-Admin-Membership-Categories') }}">
                                     <i class="metismenu-icon"></i> Memebership Categories
                                    
                                 </a>
                                
                             </li>
                             <li>
-                                <a href="elements-dropdowns.html" >
+                                <a href="{{ route('View-Admin-Membership-Benefits') }}" >
                                     <i class="metismenu-icon"></i>Benefit to Members
                                 </a>
                             </li>
@@ -224,7 +233,7 @@
                                     <i class="metismenu-icon"></i>Memebership Application forms
                                 </a>
                             </li><li>
-                                <a href="elements-icons.html" >
+                                <a href="{{ route('View-Admin-Volunteer-Oppurtunities') }}" >
                                     <i class="metismenu-icon"></i>Volunteer Opportunities
                                 </a>
                             </li>

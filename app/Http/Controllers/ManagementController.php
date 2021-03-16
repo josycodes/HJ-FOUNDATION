@@ -25,7 +25,7 @@ class ManagementController extends Controller
     }
     public function addManagement(Request $req){
         $req->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
           ]);
           if ($req->file('image')) {
             
@@ -58,7 +58,7 @@ class ManagementController extends Controller
     public function editManage(Request $req,$id){
         if($req->image !== "emptyimage.jpg"){
             $req->validate([
-                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'image|mimes:jpeg,png,jpg,gif',
               ]);
               if ($req->file('image')) {
                 

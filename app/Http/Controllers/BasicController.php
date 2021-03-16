@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Basic;
 use App\Models\About;
 use App\Models\Board;
+use App\Models\CurrencyRateModel;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -14,7 +15,7 @@ class BasicController extends Controller
 {
     function __construct()
     {
-        $this->middleware('auth',['except'=> ['viewIndex','viewAbout','viewAims','viewBot','viewManagement','viewFaq','viewGallery','viewEvents','findEvent','viewNews','findNews','viewAwarness','viewResearch','viewFunds','viewMemeber','viewMemeberForm','viewContact']]);
+        $this->middleware('auth',['except'=> ['viewIndex','viewAbout','viewAims','viewBot','viewManagement','viewFaq','viewGallery','viewEvents','findEvent','viewNews','findNews','viewAwarness','viewResearch','viewFunds','viewMemeber','viewMemeberForm','viewContact','viewDonate']]);
     }
     public function viewIndex(){
         $basic = Basic::find(1);
@@ -95,7 +96,19 @@ class BasicController extends Controller
     }
     public function viewDonate(){
         $about = About::find(1);
-        return view('pages.donate',['abouts' => $about]);
+        $currency = CurrencyRateModel::all();
+        $base = [];
+        foreach ($currency as $key) {
+            
+            if(in_array($key->second_currency,$base)){
+                continue;
+            }else{
+                array_push($base,$key->second_currency);
+            }
+            
+        }      
+
+        return view('pages.donate',['allbasics' => $about, 'currency' => $base]);
     }
     public function viewAdminGoal() {
         $about = About::find(1);

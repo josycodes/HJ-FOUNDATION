@@ -64,7 +64,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('About Us') }}" class="nav-link">
+                                    <a href="{{ route('About-Us') }}" class="nav-link">
                                         About Us
                                     </a>
                                 </li>
@@ -74,17 +74,17 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Board Of Trustees') }}" class="nav-link">
+                                    <a href="{{ route('Board-Of-Trustees') }}" class="nav-link">
                                         Board of Trustees
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Management Team') }}" class="nav-link">
+                                    <a href="{{ route('Management-Team') }}" class="nav-link">
                                         Management Team
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Frequently Asked Questions') }}" class="nav-link">
+                                    <a href="{{ route('Frequently-Asked-Questions') }}" class="nav-link">
                                         Frequently Asked Questions
                                     </a>
                                 </li>
@@ -130,7 +130,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Fund Raising') }}" class="nav-link">
+                                    <a href="{{ route('Fund-Raising') }}" class="nav-link">
                                         Fund Raising
                                     </a>
                                 </li>
@@ -143,29 +143,29 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('Memebership Categories') }}" class="nav-link">
+                                    <a href="{{ route('Memebership-Categories') }}" class="nav-link">
                                         Membership Categories
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Benefits To Members') }}" class="nav-link">
+                                    <a href="{{ route('Benefits-To-Members') }}" class="nav-link">
                                         Benefits to Members
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Membership Application Forms') }}" class="nav-link">
+                                    <a href="{{ route('Membership-Application-Forms') }}" class="nav-link">
                                         Membership Application Forms
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('Volunteer Opportunities') }}" class="nav-link">
+                                    <a href="{{ route('Volunteer-Opportunities') }}" class="nav-link">
                                         Volunteer Opportunities
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('Contact Us') }}" class="nav-link <?php print @$active6;?>">
+                            <a href="{{ route('Contact-Us') }}" class="nav-link <?php print @$active6;?>">
                                 Contact
                             </a>
                         </li>

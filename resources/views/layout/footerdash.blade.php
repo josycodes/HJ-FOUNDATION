@@ -866,6 +866,11 @@
   </script>
 
 <script type="text/javascript" src="{{ asset('assets/scripts/ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/clockpicker/dist/bootstrap-clockpicker.min.js')}}"></script>
+<script type="text/javascript">
+    $('.clockpicker').clockpicker();
+</script>
+
 <script>
 
     $(function() {  
