@@ -55,11 +55,11 @@
                 </div>
             </div>
         </div>
-
-
-
+    
+    
+    
     </div>
-
+    
     @include('layout.footerdash')
     <script>
         function PreviewFile(input){
@@ -80,10 +80,10 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
+    
     $("#submit-management").click(function(e) {
             e.preventDefault();
-
+            
             var fd = new FormData();
             var image = $('#file')[0].files[0];
             var name = $('#name').val();
@@ -108,7 +108,7 @@
            // const myForm = $('form#submit-bot-form');
               
                $.ajax({
-                    url: "{{ route('Add Management') }}",
+                    url: "{{ route('Add-Management') }}",
                     data: fd,
                     type: 'POST',
                     success: function(response){

@@ -22,7 +22,7 @@
                         <td>{{ $b->name }}</td>
                         <td>{{ $b->position }}</td>
                         <td><div class="btn btn-group">
-                            <a class="btn btn-info" href="{{ route('Edit Board of Trustees', $b->id ) }}"><i class="fa fa-pencil-alt"></i></a>
+                            <a class="btn btn-info" href="{{ route('Edit-Board-of-Trustees', $b->id ) }}"><i class="fa fa-pencil-alt"></i></a>
                             <a class="btn btn-danger" data-toggle="modal"
                             data-target="#MODALDELETEBOARD{{ $b->id }}"><i class="fa fa-trash-alt"></i></a>
                         </div></td>

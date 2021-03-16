@@ -49,7 +49,7 @@ class BoardController extends Controller
     public function updateBot(Request $req,$id){
         if($req->image !== "emptyimage.jpg"){
             $req->validate([
-                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image' => 'image|mimes:jpeg,png,jpg,gif',
               ]);
               if ($req->file('image')) {
                 
@@ -91,9 +91,9 @@ class BoardController extends Controller
     public function deleteBot($id){
         $get = Board::find($id);
         if($get->delete()){
-            return redirect()->route('All Board of Trustees')->with('success','Data was Deleted Successfully');
+            return redirect()->route('All-Board-of-Trustees')->with('success','Data was Deleted Successfully');
         }else{
-            return redirect()->route('All Board of Trustees')->with('error','Data was not Deleted');
+            return redirect()->route('All-Board-of-Trustees')->with('error','Data was not Deleted');
         }
     }
 }

@@ -19,4 +19,5 @@
 <link href="{{ asset('assets/sweetalert-js/sweetalert.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/css/yearpicker.css') }}" rel="stylesheet">
 <script type="text/javascript" src="{{ asset('assets/sweetalert-js/sweetalert.min.js') }}"></script>
+<link type="text/css" rel="stylesheet" href="{{ asset('assets/clockpicker/dist/bootstrap-clockpicker.min.css') }}" />
 </head>

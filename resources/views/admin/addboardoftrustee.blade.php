@@ -179,6 +179,7 @@
                            
                            swal("Success", "Created Successfully", "success");
                            $("#submit-bot").html("Created");
+                           window.location.reload();
                        
                        }
                        else{

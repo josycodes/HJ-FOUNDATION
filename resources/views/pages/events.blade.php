@@ -37,11 +37,7 @@ $active3='active';
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="event-time">
-                            <h3>0-130</h3>
-                            <span>5 December 2021</span>
-                            <div class="icon">
-                                <i class="flaticon-clock"></i>
-                            </div>
+                            <img src="/storage/news/3uui4ixT7GVyYXHQJZuKrnPxdK1p30w9oLiZtem0.jpg" width="300" height="235" />
                         </div>
                     </div>
                     <div class="col-lg-8">
@@ -67,11 +63,7 @@ $active3='active';
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="event-time">
-                            <h3>0-140</h3>
-                            <span>10 January 2021</span>
-                            <div class="icon">
-                                <i class="flaticon-clock"></i>
-                            </div>
+                           <img src="{{ asset('assets/assetpage/img/blog/1.jpg') }}" width="300" height="235" />
                         </div>
                     </div>
                     <div class="col-lg-8">
