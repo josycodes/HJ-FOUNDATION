@@ -32,12 +32,15 @@ class BasicController extends Controller
         $news = News::take(3)->get();;
         return view('pages.index', ['allbasics' => $basic,'about'=>$about,'team' => $team , 'event'=>$event,'news'=>$news]);
     }
+
     public  function viewAbout(){
         $basic = Basic::find(1);
         $about = About::find(1);
         $team = Management::all();
         return view('pages.about', ['allbasics' => $basic,'about'=>$about,'team' => $team]);
     }
+
+
     public function viewAims() {
         $basic = Basic::find(1);
         $about = About::find(1);
@@ -48,96 +51,110 @@ class BasicController extends Controller
         $allboards = Board::all();
         return view('pages.board-of-trustees', ['allbasics' => $basic,'boards'=>$allboards]);
     }
-    public function viewManagement() {
-        $basic = Basic::find(1);
-        $management = Management::all();
-        return view('pages.management-team', ['allbasics' => $basic,'management'=>$management]);
-    }
+
+
     public function viewFaq() {
         $basic = Basic::find(1);
         $questions = Question::all();
         return view('pages.faq', ['allbasics' => $basic,'question'=>$questions]);
     }
+
     public function viewGallery() {
         $basic = Basic::find(1);
         $gallery = Gallery::all();
         return view('pages.gallery', ['allbasics' => $basic,'gallery'=>$gallery]);
     }
+
     public function viewEvents() {
         $basic = Basic::find(1);
         $event = Event::simplePaginate(4);
         return view('pages.events', ['allbasics' => $basic,'event'=>$event]);
     }
+
     public function findEvent($id){
         $basic = Basic::find(1);
         $event = Event::find($id);
         $event1 = Event::take(5)->get();
         return view('pages.event-detail', ['allbasics' => $basic, 'event'=>$event, 'event1'=>$event1]);
     }
+
+
     public function viewNews() {
         $basic = Basic::find(1);
         $news = News::simplePaginate(8);
         return view('pages.news', ['allbasics' => $basic,'news'=>$news]);
     }
+
     public function findNews($id) {
         $basic = Basic::find(1);
         $news = News::find($id);
         return view('pages.news-detail', ['allbasics' => $basic,'news'=>$news]);
     }
+
     public function viewAwarness() {
         $basic = Basic::find(1);
         $pro = Programme::find(1);
         return view('pages.awareness', ['allbasics' => $basic,'pro'=>$pro]);
     }
+
     public function viewResearch() {
         $basic = Basic::find(1);
         $pro = Programme::find(1);
         return view('pages.research', ['allbasics' => $basic,'pro'=>$pro]);
     }
+
     public function viewFunds() {
         $basic = Basic::find(1);
         $pro = Programme::find(1);
         return view('pages.fund-raising', ['allbasics' => $basic,'pro'=>$pro]);
     }
+
     public function viewMemeber() {
         $basic = Basic::find(1);
         $member = Member::find(1);
         return view('pages.membership-categories', ['allbasics' => $basic,'member'=>$member]);
     }
+
     public function viewBenefits() {
         $basic = Basic::find(1);
         $member = Member::find(1);
         return view('pages.benefits-to-members', ['allbasics' => $basic,'member'=>$member]);
     }
+
     public function viewMemeberForm() {
         $basic = Basic::find(1);
         return view('pages.membership-application-forms', ['allbasics' => $basic]);
     }
+
     public function viewVolunteer() {
         $basic = Basic::find(1);
         $member = Member::find(1);
         return view('pages.volunteer-opportunities', ['allbasics' => $basic,'member'=>$member]);
     }
+
     public function viewContact() {
         $basic = Basic::find(1);
         return view('pages.contact', ['allbasics' => $basic]);
     }
+
     public function viewDonate(){
         $about = About::find(1);
+        $pubKey = config('values.rave_public_key');
         $currency = CurrencyRateModel::all();
         $base = [];
         foreach ($currency as $key) {
-            
+
             if(in_array($key->second_currency,$base)){
                 continue;
             }else{
                 array_push($base,$key->second_currency);
             }
-            
-        }      
-        
-        return view('pages.donate',['allbasics' => $about, 'currency' => $base]);
+
+        }
+
+        return view('pages.donate',['allbasics' => $about, 'currency' => $base, 'rave_public_key' => $pubKey]);
     }
+
     public function viewAdminGoal() {
         $about = About::find(1);
         return view('admin.goal',['abouts' => $about]);
@@ -170,7 +187,7 @@ class BasicController extends Controller
         $allboards = Board::find($id);
         return view('admin.editboardoftrustee',['boards' => $allboards]);
     }
-    
+
     public function ImageName(){
         $one = 'IMAGE';
         $two = rand(1000,9999);
@@ -211,7 +228,7 @@ class BasicController extends Controller
                 return response()->json($response);
             }
 
-    } 
+    }
     public function submitlogo(Request $req){
         $req->validate([
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -225,14 +242,14 @@ class BasicController extends Controller
 
             $filePath = $req->file('file')->store('public/logo');
             $imgName = explode('/' , $filePath);
-            
+
             // $path = $req->file('file')->storeAs('logo', $imageName, 'public');
         }
 
         $basiclogo->sitelogo = end($imgName);
         // $basiclogo->path = '/storage/'.$path;
         $basiclogo->save();
-        
+
         $response = ['status'=> 1, 'message' => 'Image Uploaded Successfully'];
         return response()->json($response);
 

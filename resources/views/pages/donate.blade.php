@@ -1,5 +1,5 @@
 <?php
-$title = 'HJ Foundation | Where charity lives'; 
+$title = 'HJ Foundation | Where charity lives';
 $active5='active';
 ?>
 @include('layoutpages.head')
@@ -87,7 +87,7 @@ $active5='active';
                                             <span></span>
                                         </button>
                                     </div>
-                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div id="msgSubmit" class="hidden text-center h3"></div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -129,10 +129,10 @@ $active5='active';
                                             @foreach ($currency as $b)
                                                 <option @php
                                                     if($b == 'NGN') print 'selected';
-                                                @endphp value="{{ $b }}">{{ $b }}</option> 
+                                                @endphp value="{{ $b }}">{{ $b }}</option>
                                             @endforeach
-                                       
-                                        
+
+
                                         </select>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -151,7 +151,7 @@ $active5='active';
                                             <span></span>
                                         </button>
                                     </div>
-                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div id="msgSubmit" class="hidden text-center h3"></div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -166,11 +166,11 @@ $active5='active';
 
 @include('layoutpages.footer')
    <script src="https://checkout.flutterwave.com/v3.js"></script>
-  <script>  
-    
+  <script>
+
     function makePayment(txID,currency,amount,useremail,userphone,username) {
       FlutterwaveCheckout({
-        public_key: "FLWPUBK_TEST-e4782dac6654d9fd6f6563bede389ca2-X",
+        public_key: "{{$rave_public_key}}",
         tx_ref: txID,
         amount: amount,
         currency: currency,
@@ -200,33 +200,33 @@ $active5='active';
         },
       });
     }
- 
+
    $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    
+
     $("#submit").click(function(e) {
-    
+
             e.preventDefault();
-            
+
             var name = $('#name').val();
             var email = $('#email').val();
             var phone = $('#phone_number').val();
             var currency = $('#currency').val();
             var amount = $('#amount').val();
-            
+
             if(name === "" || email === "" || phone === ""|| amount === ""){
                 swal("Error", "Please Fill all fields","error");
             }else{
-            
+
                 $.ajax({
                     url: "{{ route('GetuniqueIDTX') }}",
                     data: {name:name,email:email,phone:phone,currency:currency,amount:amount},
                     type : 'POST',
                     success: function(response){
-                        
+
                         makePayment(response,currency,amount,email,phone,name);
 
                     }

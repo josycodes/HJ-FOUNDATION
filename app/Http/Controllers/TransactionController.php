@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 class TransactionController extends Controller
-{   
+{
     function __construct(){
         $this->middleware('auth', ['except'=>['getTransactionID','confirmTransaction']]);
     }
-    
+
     public function getTransactionID(Request $req){
         $one = 'TRANSACTIONID';
         $two = uniqid();
         $three = rand(1, 999999999999999);
         $response = $one.$two.$three;
-        
+
         $trans = new Transaction();
         $trans->transaction_id = $response;
         $trans->name = $req->name;
@@ -24,25 +24,27 @@ class TransactionController extends Controller
         $trans->currency = $req->currency;
         $trans->amount = $req->amount;
         $trans->status = 'PENDING';
-        
+
         if($trans->save()){
 
             return response()->json($response);
         }else{
             return redirect()->route('Donate')->with("error", "Transaction not Completed");
         }
-    
-    
-    
-    
-       
+
     }
-    
+
     public function confirmTransaction(){
         $getID = $_GET['transaction_id'];
         $tx_ref = $_GET['tx_ref'];
         $curl = curl_init();
-        
+        $secKey = config('values.rave_secret_key');
+        //get the transaction
+        $transaction = Transaction::where('transaction_id', '=', $tx_ref)->first();
+        if($transaction->status == 'SUCCESSFULL'){
+            return redirect()->route('Donate')->with("success", "Transaction Completed.");
+        }
+
         curl_setopt_array($curl, array(
         CURLOPT_URL => "https://api.flutterwave.com/v3/transactions/".$getID."/verify",
         CURLOPT_RETURNTRANSFER => true,
@@ -54,18 +56,18 @@ class TransactionController extends Controller
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
-            "Authorization: Bearer FLWSECK_TEST-a80518b23e2b07be1e5d481b607da242-X"
+                "Authorization: Bearer " . $secKey
         ),
         ));
-            
+
             $return_data  = curl_exec($curl);
 
             $response = json_decode($return_data);
-            
+
             curl_close($curl);
-        
+
             $findTrans = Transaction::where('transaction_id', '=', $tx_ref)->first();
-            
+
             if($response->status == "success"){
                 if($response->data->amount == $findTrans->amount){
                     if($response->data->currency == $findTrans->currency){
@@ -77,11 +79,13 @@ class TransactionController extends Controller
                         }
                     }else{
                         $findTrans->status = 'FAILED';
+                        $findTrans->save();
                         return redirect()->route('Donate')->with("error", "An error occurred, please try again later.");
                     }
 
                 }else{
                     $findTrans->status = 'FAILED';
+                    $findTrans->save();
                     return redirect()->route('Donate')->with("error", "An error occurred, please try again later.");
                 }
             }else{

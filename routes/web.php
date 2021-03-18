@@ -14,6 +14,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\SubscribeController;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\WebhookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -162,7 +163,7 @@ Route::post('UploadGalleryImage' , [GalleryController::class, 'uploadgalleryimag
 Route::get('View-All-Gallery' , [GalleryController::class, 'viewallgallery'])->name('View-All-Gallery');
 
 Route::get('DeleteImage/{id}' , [GalleryController::class, 'deletegallery'])->name('DeleteImage');
- 
+
  //EDIT BOARD OF TRUSTEE
 Route::post('EditBoardofTrustee/{id}', [BoardController::class, 'UpdateBot'])->name('EditBoardofTrustee');
 
@@ -230,5 +231,4 @@ Route::get('Edit-Event/{id}', [EventController::class , 'editevent'])->name('Edi
 Route::post('Update-Event/{id}', [EventController::class , 'updateEvent'])->name('Update-Event');
 
 Route::get('DeleteEvent/{id}', [EventController::class , 'deleteEvent'])->name('DeleteEvent');
-
-
+Route::post('flutterwave-hook', [WebhookController::class, 'index'])->name('flutterwave-hook');
