@@ -37,70 +37,18 @@ $active2='active';
     </div>
     <div class="container-fluid">
         <div class="row">
+            @foreach ($gallery as $g)
+                
+           
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-gallery-box">
-                    <img src="{{ asset('assets/assetpage/img/gallery/1.jpg') }}" alt="image">
-                    <a href="{{ asset('assets/assetpage/img/gallery/1.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
+                    <img src="/storage/Gallery/{{ $g->image }}" alt="image">
+                    <a href="/storage/Gallery/{{ $g->image }}" class="gallery-btn" data-imagelightbox="popup-btn">
                         <i class="flaticon-search"></i>
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-gallery-box">
-                    <img src="{{ asset('assets/assetpage/img/gallery/2.jpg') }}" alt="image">
-                    <a href="{{ asset('assets/assetpage/img/gallery/2.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
-                        <i class="flaticon-search"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-gallery-box">
-                    <img src="{{ asset('assets/assetpage/img/gallery/3.jpg') }}" alt="image">
-                    <a href="{{ asset('assets/assetpage/img/gallery/3.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
-                        <i class="flaticon-search"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-gallery-box">
-                    <img src="{{ asset('assets/assetpage/img/gallery/4.jpg') }}" alt="image">
-                    <a href="{{ asset('assets/assetpage/img/gallery/4.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
-                        <i class="flaticon-search"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-gallery-box">
-                    <img src="{{ asset('assets/assetpage/img/gallery/5.jpg') }}" alt="image">
-                    <a href="{{ asset('assets/assetpage/img/gallery/5.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
-                        <i class="flaticon-search"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-gallery-box">
-                    <img src="{{ asset('assets/assetpage/img/gallery/6.jpg') }}" alt="image">
-                    <a href="{{ asset('assets/assetpage/img/gallery/6.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
-                        <i class="flaticon-search"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-gallery-box">
-                    <img src="{{ asset('assets/assetpage/img/gallery/7.jpg') }}" alt="image">
-                    <a href="{{ asset('assets/assetpage/img/gallery/7.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
-                        <i class="flaticon-search"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-gallery-box">
-                    <img src="{{ asset('assets/assetpage/img/gallery/8.jpg') }}" alt="image">
-                    <a href="{{ asset('assets/assetpage/img/gallery/8.jpg') }}" class="gallery-btn" data-imagelightbox="popup-btn">
-                        <i class="flaticon-search"></i>
-                    </a>
-                </div>
-            </div>
+             @endforeach
         </div>
     </div>
 </div>

@@ -33,116 +33,47 @@ $active3='active';
 <section class="blog-section pt-100 pb-100">
     <div class="container">
         <div class="row">
+            @foreach ($event as $e)
+                
+            
             <div class="event-item pb-5">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="event-time">
-                            <img src="/storage/news/3uui4ixT7GVyYXHQJZuKrnPxdK1p30w9oLiZtem0.jpg" width="300" height="235" />
+                            <img src="/storage/Event/{{ $e->image }}" width="300" height="235" />
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="event-content">
-                            <h4>Huruma Con Donation 2021</h4>
+                            <h4>{{ $e->title}}</h4>
                             <ul class="event-meta">
                                 <li>
                                     <i class="flaticon-clock"></i>
-                                    8:00 - 10:00
+                                    {{ $e->starttime }} - {{ $e->endtime }}
                                 </li>
                                 <li>
                                     <i class="flaticon-pin"></i>
-                                    Newyork City
+                                    {{ $e->location }}
                                 </li>
                             </ul>
-                            <p>Dona ques suspendice consectetucaquuis ipsums gravida.</p>
-                            <a href="event-detail" class="event-btn-one">Learn More +</a>
+                            <a href="{{ route('Event-Detail',$e->id) }}" class="event-btn-one">Learn More +</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="event-item pb-5">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="event-time">
-                           <img src="{{ asset('assets/assetpage/img/blog/1.jpg') }}" width="300" height="235" />
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="event-content">
-                            <h4>Poor funding for helpless</h4>
-                            <ul class="event-meta">
-                                <li>
-                                    <i class="flaticon-clock"></i>
-                                    9:00 - 12:00
-                                </li>
-                                <li>
-                                    <i class="flaticon-pin"></i>
-                                    Calfornia City
-                                </li>
-                            </ul>
-                            <p>Suspendice quis ipsum consectetucaquuis ipsums gravida.</p>
-                            <a href="event-detail" class="event-btn-one">Learn More +</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="event-item pb-5">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="event-time">
-                            <h3>0-130</h3>
-                            <span>5 December 2021</span>
-                            <div class="icon">
-                                <i class="flaticon-clock"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="event-content">
-                            <h4>Huruma Con Donation 2021</h4>
-                            <ul class="event-meta">
-                                <li>
-                                    <i class="flaticon-clock"></i>
-                                    8:00 - 10:00
-                                </li>
-                                <li>
-                                    <i class="flaticon-pin"></i>
-                                    Newyork City
-                                </li>
-                            </ul>
-                            <p>Dona ques suspendice consectetucaquuis ipsums gravida.</p>
-                            <a href="event-detail" class="event-btn-one">Learn More +</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="event-item pb-5">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="event-time">
-                            <h3>0-140</h3>
-                            <span>10 January 2021</span>
-                            <div class="icon">
-                                <i class="flaticon-clock"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="event-content">
-                            <h4>Poor funding for helpless</h4>
-                            <ul class="event-meta">
-                                <li>
-                                    <i class="flaticon-clock"></i>
-                                    9:00 - 12:00
-                                </li>
-                                <li>
-                                    <i class="flaticon-pin"></i>
-                                    Calfornia City
-                                </li>
-                            </ul>
-                            <p>Suspendice quis ipsum consectetucaquuis ipsums gravida.</p>
-                            <a href="event-detail" class="event-btn-one">Learn More +</a>
-                        </div>
-                    </div>
+            @endforeach
+
+            <div class="col-lg-12 col-md-12">
+                <div class="pagination-area">
+                    <a href="{{ $event->previousPageUrl() }}" class="prev page-numbers">
+                        <i class="flaticon-left"></i>
+                    </a>
+                    
+                    <span class="page-numbers current" aria-current="page">{{ $event->currentPage() }}</span>
+                    
+                    <a href="{{ $event->nextPageUrl() }}" class="next page-numbers">
+                        <i class="flaticon-right"></i>
+                    </a>
                 </div>
             </div>
         </div>

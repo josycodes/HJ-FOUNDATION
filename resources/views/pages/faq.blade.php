@@ -34,55 +34,15 @@ $active2='active';
     <div class="container">
         <div class="faq-accordion-content">
             <ul class="accordion">
+                @foreach ($question as $k => $q )
                 <li class="accordion-item">
-                    <a class="accordion-title active" href="javascript:void(0)">
+                    <a class="accordion-title <?php if($k==0){ echo 'active';}?>" href="javascript:void(0)">
                         <i class="flaticon-plus"></i>
-                        Which material types can you work with?
+                        {{ $q->question }}
                     </a>
-                    <p class="accordion-content show">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    <p class="accordion-content <?php if($k==0){ echo 'show';}?>"><?php print $q->answer?></p>
                 </li>
-                <li class="accordion-item">
-                    <a class="accordion-title" href="javascript:void(0)">
-                        <i class="flaticon-plus"></i>
-                        What access do I have on the free plan?
-                    </a>
-                    <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
-                </li>
-                <li class="accordion-item">
-                    <a class="accordion-title" href="javascript:void(0)">
-                        <i class="flaticon-plus"></i>
-                        Can I have multiple activities in a single feature?
-                    </a>
-                    <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
-                </li>
-                <li class="accordion-item">
-                    <a class="accordion-title" href="javascript:void(0)">
-                        <i class="flaticon-plus"></i>
-                        Which material types can you work with?
-                    </a>
-                    <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
-                </li>
-                <li class="accordion-item">
-                    <a class="accordion-title" href="javascript:void(0)">
-                        <i class="flaticon-plus"></i>
-                        Why Choose Our Services In Your Business?
-                    </a>
-                    <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
-                </li>
-                <li class="accordion-item">
-                    <a class="accordion-title" href="javascript:void(0)">
-                        <i class="flaticon-plus"></i>
-                        How To Get Start With Us?
-                    </a>
-                    <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
-                </li>
-                <li class="accordion-item">
-                    <a class="accordion-title" href="javascript:void(0)">
-                        <i class="flaticon-plus"></i>
-                        Why Choose Our Services In Your Business?
-                    </a>
-                    <p class="accordion-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida</p>
-                </li>
+               @endforeach
             </ul>
         </div>
     </div>

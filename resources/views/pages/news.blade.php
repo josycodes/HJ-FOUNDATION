@@ -35,128 +35,38 @@ $active3='active';
         <div class="row">
             <div class="col-lg-8">
                 <div class="row">
+                    @foreach ($news as $n)
+                        
+                    
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="single-blog">
-                            <img src="{{ asset('assets/assetpage/img/blog/1.jpg') }}" alt="image">
+                            <img src="/storage/news/{{ $n->image }}" alt="image">
                             <div class="content">
-                                <span>Poor, 22 January</span>
+                                <span>{{ $n->category }}</span>
                                 <h3>
-                                    <a href="#">
-                                        Poverty not only money it can be food sometimes
+                                    <a href="{{ route('News-Detail',$n->id) }}">
+                                        {{ $n->title }}
                                     </a>
                                 </h3>
-                                <a href="news-detail" class="blog-btn">Read more +</a>
+                                <a href="{{ route('News-Detail',$n->id) }}" class="blog-btn">Read more +</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <img src="{{ asset('assets/assetpage/img/blog/2.jpg') }}" alt="image">
-                            <div class="content">
-                                <span>Food, 21 December</span>
-                                <h3>
-                                    <a href="#">
-                                        Strawberry-Banana Quinoa Muffins Recipe for poor
-                                    </a>
-                                </h3>
-                                <a href="news-detail" class="blog-btn">Read more +</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <img src="{{ asset('assets/assetpage/img/blog/1.jpg') }}" alt="image">
-                            <div class="content">
-                                <span>Poor, 22 January</span>
-                                <h3>
-                                    <a href="#">
-                                        Poverty not only money it can be food sometimes
-                                    </a>
-                                </h3>
-                                <a href="news-detail" class="blog-btn">Read more +</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <img src="{{ asset('assets/assetpage/img/blog/2.jpg') }}" alt="image">
-                            <div class="content">
-                                <span>Food, 21 December</span>
-                                <h3>
-                                    <a href="#">
-                                        Strawberry-Banana Quinoa Muffins Recipe for poor
-                                    </a>
-                                </h3>
-                                <a href="news-detail" class="blog-btn">Read more +</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <img src="{{ asset('assets/assetpage/img/blog/3.jpg') }}" alt="image">
-                            <div class="content">
-                                <span>Healthy, 21 June</span>
-                                <h3>
-                                    <a href="#">
-                                        The charity can help make a smile of poor people
-                                    </a>
-                                </h3>
-                                <a href="news-detail" class="blog-btn">Read more +</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <img src="{{ asset('assets/assetpage/img/blog/4.jpg') }}" alt="image">
-                            <div class="content">
-                                <span>Poor, 22 January</span>
-                                <h3>
-                                    <a href="#">
-                                        South Korea pre-primary school build for children
-                                    </a>
-                                </h3>
-                                <a href="news-detail" class="blog-btn">Read more +</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <img src="{{ asset('assets/assetpage/img/blog/5.jpg') }}" alt="image">
-                            <div class="content">
-                                <span>Food, 21 December</span>
-                                <h3>
-                                    <a href="#">
-                                        Provide pure water for Filipino poor people
-                                    </a>
-                                </h3>
-                                <a href="news-detail" class="blog-btn">Read more +</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="single-blog">
-                            <img src="{{ asset('assets/assetpage/img/blog/6.jpg') }}" alt="image">
-                            <div class="content">
-                                <span>Healthy, 21 June</span>
-                                <h3>
-                                    <a href="#">
-                                        Children’s national festival for learning or play
-                                    </a>
-                                </h3>
-                                <a href="news-detail" class="blog-btn">Read more +</a>
-                            </div>
-                        </div>
-                    </div>
+                   @endforeach
+                    
+
+
+
+
                     <div class="col-lg-12 col-md-12">
                         <div class="pagination-area">
-                            <a href="#" class="prev page-numbers">
+                            <a href="{{ $news->previousPageUrl() }}" class="prev page-numbers">
                                 <i class="flaticon-left"></i>
                             </a>
-                            <a href="#" class="page-numbers">1</a>
-                            <span class="page-numbers current" aria-current="page">2</span>
-                            <a href="#" class="page-numbers">3</a>
-                            <a href="#" class="page-numbers">4</a>
-                            <a href="#" class="next page-numbers">
+                            
+                            <span class="page-numbers current" aria-current="page">{{ $news->currentPage() }}</span>
+                            
+                            <a href="{{ $news->nextPageUrl() }}" class="next page-numbers">
                                 <i class="flaticon-right"></i>
                             </a>
                         </div>

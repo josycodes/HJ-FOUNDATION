@@ -26,6 +26,7 @@ class TransactionController extends Controller
         $trans->status = 'PENDING';
         
         if($trans->save()){
+
             return response()->json($response);
         }else{
             return redirect()->route('Donate')->with("error", "Transaction not Completed");
@@ -36,6 +37,7 @@ class TransactionController extends Controller
     
        
     }
+    
     public function confirmTransaction(){
         $getID = $_GET['transaction_id'];
         $tx_ref = $_GET['tx_ref'];
@@ -86,5 +88,10 @@ class TransactionController extends Controller
                 return redirect()->route('Donate')->with("error", "Transaction not Completed. Try Again Later!!!!");
             }
         // return view('pages.transaction');
+    }
+    public function viewAllDonation(){
+        $transactions = Transaction::all();
+
+        return view('admin.admindonate',['transaction' => $transactions]);
     }
 }

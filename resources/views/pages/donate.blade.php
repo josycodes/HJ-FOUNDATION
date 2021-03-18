@@ -226,8 +226,8 @@ $active5='active';
                     data: {name:name,email:email,phone:phone,currency:currency,amount:amount},
                     type : 'POST',
                     success: function(response){
-
-                         makePayment(response,currency,amount,email,phone,name);
+                        
+                        makePayment(response,currency,amount,email,phone,name);
 
                     }
                 });

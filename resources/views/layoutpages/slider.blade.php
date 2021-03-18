@@ -9,12 +9,12 @@
                             <h1>It is more difficult to give money away </h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing incididunt ut laboredolore magna aliqua elsed tempomet, consectetur adipiscing.</p>
                             <div class="banner-btn">
-                                <a href="donate" class="default-btn baseColor">
+                                <a href="{{ route('Donate') }}" class="default-btn baseColor">
                                     Donate Now
                                     <i class="flaticon-right"></i>
                                     <span></span>
                                 </a>
-                                <a class="optional-btn" href="membership-application-forms">
+                                <a class="optional-btn" href="{{ route('Membership-Application-Forms') }}">
                                     Become Member
                                     <i class="flaticon-right"></i>
                                 </a>

@@ -42,11 +42,11 @@ Route::get('Gallery', [BasicController::class, 'viewGallery'])->name('Gallery');
 
 Route::get('Events', [BasicController::class , 'viewEvents'])->name('Events');
 
-Route::get('Event-Detail', [BasicController::class , 'findEvent'])->name('Event-Detail');
+Route::get('Event-Detail/{id}', [BasicController::class , 'findEvent'])->name('Event-Detail');
 
 Route::get('News', [BasicController::class , 'viewNews'])->name('News');
 
-Route::get('News-Detail', [BasicController::class , 'findNews'])->name('News-Detail');
+Route::get('News-Detail/{id}', [BasicController::class , 'findNews'])->name('News-Detail');
 
 Route::get('Awareness', [BasicController::class , 'viewAwarness'])->name('Awareness');
 
@@ -60,7 +60,7 @@ Route::get('Benefits-To-Members', [BasicController::class, 'viewBenefits'])->nam
 
 Route::get('Membership-Application-Forms', [BasicController::class , 'viewMemeberForm'])->name('Membership-Application-Forms');
 
-Route::get('Volunteer-Opportunities', [MemberController::class , 'viewVolunteer'])->name('Volunteer-Opportunities');
+Route::get('Volunteer-Opportunities', [BasicController::class , 'viewVolunteer'])->name('Volunteer-Opportunities');
 
 Route::get('Contact-Us', [BasicController::class , 'viewContact'])->name('Contact-Us');
 
@@ -133,6 +133,8 @@ Route::get('Admin-News', function (){
 Route::get('Admin-Event', function (){
     return view('admin.addevent');
 })->name('Admin-Event');
+
+Route::get('All-Donations',[TransactionController::class,'viewAllDonation'])->name('All-Donations');
 
 
 

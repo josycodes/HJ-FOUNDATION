@@ -34,36 +34,25 @@ $active2='active';
 <section class="mission-section pt-5 pb-5">
     <div class="container">
         <div class="row">
+            @foreach ($management as $m)
+           
             <div class="col-lg-6">
                 <div class="row pb-5">
                     <div class="col-lg-2">
-                        <div class="team-image">
-                            <img src="{{ asset('assets/assetpage/img/team/7.png') }}" alt="image">
+                        <div class="team-image" style="width:60px;height:60px;">
+                            <img style="width:60px;height:60px;" src="/storage/Management Team/{{ $m->image }}" alt="image">
                         </div>
                     </div>
                     <div class="col-lg-9">
-                        <h3>Dr. Kingsley .K. Akinroye</h3>
-                        Executive Director
-                        <p>k.akinroye@nigerianheart.org<br>
-                            09086314840</p>
+                        <h3>{{ $m->full_name }}</h3>
+                        {{ $m->position }}
+                        <p>{{ $m->email }}<br>
+                            {{ $m->phone }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="row pb-5">
-                    <div class="col-lg-2">
-                        <div class="team-image">
-                            <img src="{{ asset('assets/assetpage/img/team/7.png') }}" alt="image">
-                        </div>
-                    </div>
-                    <div class="col-lg-9">
-                        <h3>Dr. Kingsley .K. Akinroye</h3>
-                        Executive Director
-                        <p>k.akinroye@nigerianheart.org<br>
-                            09086314840</p>
-                    </div>
-                </div>
-            </div>
+ @endforeach
+            
         </div>
     </div>
 </section>

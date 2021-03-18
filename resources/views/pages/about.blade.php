@@ -23,7 +23,7 @@ $active2='active';
                     <h2>About Us</h2>
                     <ul>
                         <li><a href="{{ route('/') }}">Home</a></li>
-                        <li>About</li>
+                        <li>About Us</li>
                     </ul>
                 </div>
             </div>
@@ -45,14 +45,14 @@ About us
 <p class="main-color">
 Your support will help us to make life better living for poor vulnerable children.
 </p>
-<p>Konin wansis dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+<p><?php print $about->about ?></p>
 <div class="about-btn">
-<a href="donate" class="default-btn baseColor">
+<a href="{{ route('Donate') }}" class="default-btn baseColor">
 Donate Now
 <i class="flaticon-right"></i>
 <span></span>
 </a>
-<a class="optional-btn" href="about">
+<a class="optional-btn" href="{{ route('About-Us') }}">
 More about us
 <i class="flaticon-right"></i>
 </a>
@@ -109,8 +109,7 @@ Our Goal
 </ul>
 <div class="tab_content">
 <div class="tabs_item">
-<p>Magna hpsum rolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad minim veniam, quis nostrud exercitation ullamco laboris nisi ex ea </p>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, soluta, aspernatur dolorum sequi quisquam ullam in pariatur nihil dolorem cumque excepturi totam. Qui excepturi quasi cumque placeat fuga. Ea, eius?</p>
+<p><?php print $about->mission ?></p>
 <a class="default-btn" href="#">
 Our Mission
 <span></span>
@@ -118,8 +117,7 @@ Our Mission
 </a>
 </div>
 <div class="tabs_item">
-<p>Magna hpsum rolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad minim veniam, quis nostrud exercitation ullamco laboris nisi ex ea </p>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, soluta, aspernatur dolorum sequi quisquam ullam in pariatur nihil dolorem cumque excepturi totam. Qui excepturi quasi cumque placeat fuga. Ea, eius?</p>
+<p><?php print $about->vision ?></p>
 <a class="default-btn" href="#">
 Our Mission
 <span></span>
@@ -127,8 +125,7 @@ Our Mission
 </a>
 </div>
 <div class="tabs_item">
-<p>Magna hpsum rolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad minim veniam, quis nostrud exercitation ullamco laboris nisi ex ea </p>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, soluta, aspernatur dolorum sequi quisquam ullam in pariatur nihil dolorem cumque excepturi totam. Qui excepturi quasi cumque placeat fuga. Ea, eius?</p>
+<p><?php print $about->goal ?></p>
 <a class="default-btn" href="#">
 Our Mission
 <span></span>
@@ -160,7 +157,7 @@ Meet Our Team
 </div>
 <div class="col-lg-5">
 <div class="team-btn">
-<a href="management-team" class="optional-btn">
+<a href="{{ route('Management-Team') }}" class="optional-btn">
 Meet Our Team
 <i class="flaticon-right"></i>
 </a>
@@ -169,7 +166,46 @@ Meet Our Team
 </div>
 </div>
 <div class="row">
-<div class="col-lg-3 col-sm-6">
+
+    @foreach ($team as $t)
+    
+    <div class="col-lg-3 col-sm-6">
+    <div class="single-team-member">
+    <div class="team-image">
+    <img style="width:380px; height:250px;" src="/storage/Management Team/{{ $t->image }}" width="380" height="350" alt="image">
+    </div>
+    <ul class="social-btn">
+    <li>
+    <a href="#">
+    <i class="flaticon-facebook"></i>
+    </a>
+    </li>
+    <li>
+    <a href="#">
+    <i class="flaticon-twitter"></i>
+    </a>
+    </li>
+    <li>
+    <a href="#">
+    <i class="flaticon-instagram"></i>
+    </a>
+    </li>
+    </ul>
+    <div class="member-content">
+    <h3>{{ $t->full_name }}</h3>
+    <span>{{ $t->position }}</span>
+    </div>
+    <div class="team-icon">
+    <i class="flaticon-plus"></i>
+    </div>
+    </div>
+    </div>
+    @endforeach
+
+
+
+
+{{-- <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
 <img src="{{ asset('assets/assetpage/img/team/7.png') }}" alt="image">
@@ -292,7 +328,7 @@ Meet Our Team
 <i class="flaticon-plus"></i>
 </div>
 </div>
-</div>
+</div> --}}
 </div>
 </div>
 </section>

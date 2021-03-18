@@ -35,10 +35,7 @@ $active5='active';
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-
-                <h3>Membership, Categories & Dues</h3>
-                <p>Membership of the Foundation shall be open to all Nigerians interested in fostering the a ms of the foundation. There shall be two categories of membership namely Ordinary membership and Special membership. Ordinary members will pay N2,500 as entrance fees and N2,000 as annual dues. Special membership will consists of five categories namely participating donor, supporting donor, sustainer, sponsor and benefactor. An applicant for membership shall complete an application form and submit it to the Secretariat. The membership Committee shall process the application and forward its recommendation to the Executive Board for approval. Members of the foundation shall pay the prescribed annual dues as may from time to time be determined by the members on a recommendation of the Executive Board.</p>
-
+<?php print $member->member_cat; ?>
                 <p>Special Membership Categories</p>
                 <div class="table-responsive">
                     <table class="table table-striped">

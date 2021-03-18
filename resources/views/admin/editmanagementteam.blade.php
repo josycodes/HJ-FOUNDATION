@@ -8,7 +8,7 @@
             <div class="main-card mb-3 card">
                 <div class="card-body">
                     <h5 class="card-title">Add New Management Team</h5>
-                    <form method="post" id="submit-management-form" action="{{ route('Add Management') }}">
+                    <form method="post" id="submit-management-form" action="{{ route('Add-Management') }}">
                         @csrf
                         <div class="position-relative row form-group">
                             <label for="exampleEmail" class="col-sm-2 col-form-label">Full Name</label>
@@ -39,7 +39,7 @@
                             <label for="exampleFile" class="col-sm-2 col-form-label">File</label>
                             <div class="col-sm-10">
                                 <input name="file" id="file" type="file" class="form-control-file" onchange="PreviewFile(this)">
-                                <small class="form-text text-muted">All files must be an Image eg. png, jpeg, jpg, gif.
+                                <small class="form-text text-muted">All files must be an Image eg. png, jpeg, jpg, gif. and size of 380 X 350
                                 </small>
                                 <br />
                                     <img id="previewImg" width="100" height="100" alt="UPLOAD LOGO"/> <img width="200" height="200" alt="UPLOAD LOGO" src="/storage/Management Team/{{ $allManagement->image }}"/>

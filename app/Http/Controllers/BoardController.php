@@ -17,7 +17,7 @@ class BoardController extends Controller
     }
     public function CreateBot(Request $req){
         $req->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
           ]);
           if ($req->file('image')) {
             

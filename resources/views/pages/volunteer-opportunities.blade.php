@@ -35,26 +35,7 @@ $active5='active';
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-
-                <h4>Offline Application:<br>Click on the links below to download our membership application form for the category of interest.</h4>
-                <p>
-                    To implement our programmes successfully, more hands are needed in the Foundation. You can donate your time or talent by becoming a member of Nigerian Heart Foundation. Membership is open to all Nigerians. If you are interested in helping or joining the Foundation, please fill our membership </p>
-                <p>Form or contact us at:</p>
-
-                <p>Nigerian Heart Foundation</p>
-
-                <p>4, Akanbi Danmola Street
-
-                    Off Ribadu Street
-
-                    Ikoyi, Lagos.</p>
-
-                <p>M – 07030000120</p>
-
-                <p>L- 09086314841</p>
-
-                <p> : info@nigerianheart.org</p>
-                </p>
+            <?php print $member->volunteer_oppurtunities;?>
             </div>
         </div>
     </div>

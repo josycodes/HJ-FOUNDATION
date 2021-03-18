@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 use App\Models\Basic;
 use App\Models\About;
 use App\Models\Board;
+use App\Models\Management;
+use App\Models\Event;
+use App\Models\News;
+use App\Models\Programme;
+use App\Models\Member;
+use App\Models\Question;
+use App\Models\Gallery;
 use App\Models\CurrencyRateModel;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -19,11 +26,17 @@ class BasicController extends Controller
     }
     public function viewIndex(){
         $basic = Basic::find(1);
-        return view('pages.index', ['allbasics' => $basic]);
+        $about = About::find(1);
+        $team = Management::all();
+        $event = Event::take(5)->get();;
+        $news = News::take(3)->get();;
+        return view('pages.index', ['allbasics' => $basic,'about'=>$about,'team' => $team , 'event'=>$event,'news'=>$news]);
     }
     public  function viewAbout(){
         $basic = Basic::find(1);
-        return view('pages.about', ['allbasics' => $basic]);
+        $about = About::find(1);
+        $team = Management::all();
+        return view('pages.about', ['allbasics' => $basic,'about'=>$about,'team' => $team]);
     }
     public function viewAims() {
         $basic = Basic::find(1);
@@ -32,55 +45,69 @@ class BasicController extends Controller
     }
     public function viewBot() {
         $basic = Basic::find(1);
-        return view('pages.board-of-trustees', ['allbasics' => $basic]);
+        $allboards = Board::all();
+        return view('pages.board-of-trustees', ['allbasics' => $basic,'boards'=>$allboards]);
     }
     public function viewManagement() {
         $basic = Basic::find(1);
-        return view('pages.management-team', ['allbasics' => $basic]);
+        $management = Management::all();
+        return view('pages.management-team', ['allbasics' => $basic,'management'=>$management]);
     }
     public function viewFaq() {
         $basic = Basic::find(1);
-        return view('pages.faq', ['allbasics' => $basic]);
+        $questions = Question::all();
+        return view('pages.faq', ['allbasics' => $basic,'question'=>$questions]);
     }
     public function viewGallery() {
         $basic = Basic::find(1);
-        return view('pages.gallery', ['allbasics' => $basic]);
+        $gallery = Gallery::all();
+        return view('pages.gallery', ['allbasics' => $basic,'gallery'=>$gallery]);
     }
     public function viewEvents() {
         $basic = Basic::find(1);
-        return view('pages.events', ['allbasics' => $basic]);
+        $event = Event::simplePaginate(4);
+        return view('pages.events', ['allbasics' => $basic,'event'=>$event]);
     }
-    public function findEvent() {
+    public function findEvent($id){
         $basic = Basic::find(1);
-        return view('pages.event-detail', ['allbasics' => $basic]);
+        $event = Event::find($id);
+        $event1 = Event::take(5)->get();
+        return view('pages.event-detail', ['allbasics' => $basic, 'event'=>$event, 'event1'=>$event1]);
     }
     public function viewNews() {
         $basic = Basic::find(1);
-        return view('pages.news', ['allbasics' => $basic]);
+        $news = News::simplePaginate(8);
+        return view('pages.news', ['allbasics' => $basic,'news'=>$news]);
     }
-    public function findNews() {
+    public function findNews($id) {
         $basic = Basic::find(1);
-        return view('pages.news-detail', ['allbasics' => $basic]);
+        $news = News::find($id);
+        return view('pages.news-detail', ['allbasics' => $basic,'news'=>$news]);
     }
     public function viewAwarness() {
         $basic = Basic::find(1);
-        return view('pages.awareness', ['allbasics' => $basic]);
+        $pro = Programme::find(1);
+        return view('pages.awareness', ['allbasics' => $basic,'pro'=>$pro]);
     }
     public function viewResearch() {
         $basic = Basic::find(1);
-        return view('pages.research', ['allbasics' => $basic]);
+        $pro = Programme::find(1);
+        return view('pages.research', ['allbasics' => $basic,'pro'=>$pro]);
     }
     public function viewFunds() {
         $basic = Basic::find(1);
-        return view('pages.fund-raising', ['allbasics' => $basic]);
+        $pro = Programme::find(1);
+        return view('pages.fund-raising', ['allbasics' => $basic,'pro'=>$pro]);
     }
     public function viewMemeber() {
         $basic = Basic::find(1);
-        return view('pages.membership-categories', ['allbasics' => $basic]);
+        $member = Member::find(1);
+        return view('pages.membership-categories', ['allbasics' => $basic,'member'=>$member]);
     }
     public function viewBenefits() {
         $basic = Basic::find(1);
-        return view('pages.benefits-to-members', ['allbasics' => $basic]);
+        $member = Member::find(1);
+        return view('pages.benefits-to-members', ['allbasics' => $basic,'member'=>$member]);
     }
     public function viewMemeberForm() {
         $basic = Basic::find(1);
@@ -88,7 +115,8 @@ class BasicController extends Controller
     }
     public function viewVolunteer() {
         $basic = Basic::find(1);
-        return view('pages.volunteer-opportunities', ['allbasics' => $basic]);
+        $member = Member::find(1);
+        return view('pages.volunteer-opportunities', ['allbasics' => $basic,'member'=>$member]);
     }
     public function viewContact() {
         $basic = Basic::find(1);
@@ -107,7 +135,7 @@ class BasicController extends Controller
             }
             
         }      
-
+        
         return view('pages.donate',['allbasics' => $about, 'currency' => $base]);
     }
     public function viewAdminGoal() {
@@ -142,7 +170,7 @@ class BasicController extends Controller
         $allboards = Board::find($id);
         return view('admin.editboardoftrustee',['boards' => $allboards]);
     }
-
+    
     public function ImageName(){
         $one = 'IMAGE';
         $two = rand(1000,9999);

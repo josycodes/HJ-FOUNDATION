@@ -20,19 +20,7 @@
                         <span>{{ $allbasics->siteemail }}</span>
                     </div>
                 
-                    <h3>Newsletter</h3>
-                    <form method="post" id="submit-email">
-                        <div class="form-group">
-                            <input type="email" id="subcribeemail" name="subcribeemail" class="form-control" required placeholder="Email">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <br />
-                         <button class="default-btn submit" name="submitemail" id="submitemail">
-                        Subscribe
-                        <i class="flaticon-right"></i>
-                        <span></span>
-                    </button>
-                    </form>
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -125,30 +113,11 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-footer-widget">
-                    <h3>Recent News</h3>
-                    <div class="footer-news">
-                        <a href="single-blog.html">
-                            <img src="{{ asset('assets/assetpage/img/footer-news/1.jpg') }}" alt="image">
-                            <h4>Support about poverty to poor family</h4>
-                            <span>Poor, 22 January</span>
-                        </a>
-                    </div>
-                    <div class="footer-news">
-                        <a href="single-blog.html">
-                            <img src="{{ asset('assets/assetpage/img/footer-news/2.jpg') }}" alt="image">
-                            <h4>Mostly suffered school Boys care</h4>
-                            <span>Health, 24 February</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {{-- <div class="col-lg-5 offset-lg-7 col-md-12 col-sm-6">
-                <div class="single-footer-widget">
-                    <h3>Newsletter</h3>
+                 <div class="single-footer-widget">
+               <h3>Newsletter</h3>
                     <form method="post" id="submit-email">
                         <div class="form-group">
-                            <input type="email" id="subcribeemail" class="form-control" required placeholder="Email">
+                            <input type="email" id="subcribeemail" name="subcribeemail" class="form-control" required placeholder="Email">
                             <div class="help-block with-errors"></div>
                         </div>
                         <br />
@@ -159,8 +128,8 @@
                     </button>
                     </form>
                 </div>
-                
-            </div> --}}
+            </div>
+           
             
         </div>
     </div>

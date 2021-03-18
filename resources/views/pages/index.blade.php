@@ -27,7 +27,7 @@ $active1 = 'active';
 </div>
 <h3>Become A Volunteer</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod tempor incididun labore voluptatem accusantium.</p>
-<a href="volunteer-opportunities" class="feature-btn">
+<a href="{{ route('Volunteer-Opportunities') }}" class="feature-btn">
 Join now +
 </a>
 </div>
@@ -40,7 +40,7 @@ Join now +
 </div>
 <h3>Quick Fundraiser</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod tempor incididun labore voluptatem accusantium.</p>
-<a href="fund-raising" class="feature-btn">
+<a href="{{ route('Fund-Raising') }}" class="feature-btn">
 Give now +
 </a>
 </div>
@@ -53,7 +53,7 @@ Give now +
 </div>
 <h3>Give Donation</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod tempor incididun labore voluptatem accusantium.</p>
-<a href="donate" class="feature-btn">
+<a href="{{ route('Donate') }}" class="feature-btn">
 Donate now +
 </a>
 </div>
@@ -66,7 +66,7 @@ Donate now +
 </div>
 <h3>Join as a member</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmod tempor incididun labore voluptatem accusantium.</p>
-<a href="membership-application-forms" class="feature-btn">
+<a href="{{ route('Membership-Application-Forms') }}" class="feature-btn">
 Be Member +
 </a>
 </div>
@@ -89,14 +89,14 @@ About us
 <p class="main-color">
 Your support will help us to make life better living for poor vulnerable children.
 </p>
-<p>Konin wansis dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+<p><?php print $about->about ?></p>
 <div class="about-btn">
-<a href="donate" class="default-btn baseColor">
+<a href="{{ route('Donate') }}" class="default-btn baseColor">
 Donate Now
 <i class="flaticon-right"></i>
 <span></span>
 </a>
-<a class="optional-btn" href="about">
+<a class="optional-btn" href="{{ route('About-Us') }}">
 More about us
 <i class="flaticon-right"></i>
 </a>
@@ -176,7 +176,7 @@ More about us
 </div>
 <h3>Select Membership Type</h3>
 <p>Lorem ipsum dolor siamet ecteturadipisicing</p>
-<a href="membership-categories" class="donor-btn">Learn more +</a>
+<a href="{{ route('Membership-Application-Forms') }}" class="donor-btn">Learn more +</a>
 </div>
 </div>
 <div class="col-lg-4 col-md-6">
@@ -186,7 +186,7 @@ More about us
 </div>
 <h3>Get Confirmation</h3>
 <p>Dolor Lorem ipsumsiamet ecteturadipisicin</p>
-<a href="membership-categories" class="donor-btn">Lear more +</a>
+<a href="{{ route('Memebership-Categories') }}" class="donor-btn">Lear more +</a>
 </div>
 </div>
 <div class="col-lg-4 col-md-6 col-md-6 offset-md-3 offset-lg-0">
@@ -196,7 +196,7 @@ More about us
 </div>
 <h3>Get Enjoyed</h3>
 <p>Lorem ipsum dolor siamet ecteturadipisicing</p>
-<a href="membership-categories" class="donor-btn">Learn more +</a>
+<a href="{{ route('Memebership-Categories') }}" class="donor-btn">Learn more +</a>
 </div>
 </div>
 </div>
@@ -279,45 +279,42 @@ Our Mission
 <div class="tab mission-list-tab">
 <ul class="tabs">
 <li>
-<a href="#">
+<a href="{{ route('About-Us') }}">
 Our Mission
 </a>
 </li>
 <li>
-<a href="#">
+<a href="{{ route('About-Us') }}">
 Our Vision
 </a>
 </li>
 <li>
-<a href="#">
+<a href="{{ route('About-Us') }}">
 Our Goal
 </a>
 </li>
 </ul>
 <div class="tab_content">
 <div class="tabs_item">
-<p>Magna hpsum rolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad minim veniam, quis nostrud exercitation ullamco laboris nisi ex ea </p>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, soluta, aspernatur dolorum sequi quisquam ullam in pariatur nihil dolorem cumque excepturi totam. Qui excepturi quasi cumque placeat fuga. Ea, eius?</p>
-<a class="default-btn" href="#">
+<p><?php print $about->mission ?></p>
+<a class="default-btn" href="{{ route('About-Us') }}">
 Our Mission
 <span></span>
 <i class="flaticon-right"></i>
 </a>
 </div>
 <div class="tabs_item">
-<p>Magna hpsum rolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad minim veniam, quis nostrud exercitation ullamco laboris nisi ex ea </p>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, soluta, aspernatur dolorum sequi quisquam ullam in pariatur nihil dolorem cumque excepturi totam. Qui excepturi quasi cumque placeat fuga. Ea, eius?</p>
-<a class="default-btn" href="#">
-Our Mission
+<p><?php print $about->vision?></p>
+<a class="default-btn" href="{{ route('About-Us') }}">
+Our Vision
 <span></span>
 <i class="flaticon-right"></i>
 </a>
 </div>
 <div class="tabs_item">
-<p>Magna hpsum rolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad minim veniam, quis nostrud exercitation ullamco laboris nisi ex ea </p>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, soluta, aspernatur dolorum sequi quisquam ullam in pariatur nihil dolorem cumque excepturi totam. Qui excepturi quasi cumque placeat fuga. Ea, eius?</p>
-<a class="default-btn" href="#">
-Our Mission
+<p><?php print $about->goal ?></p>
+<a class="default-btn" href="{{ route('About-Us') }}">
+Our Goal
 <span></span>
  <i class="flaticon-right"></i>
 </a>
@@ -347,7 +344,7 @@ Meet Our Team
 </div>
 <div class="col-lg-5">
 <div class="team-btn">
-<a href="management-team" class="optional-btn">
+<a href="{{ route('Management-Team') }}" class="optional-btn">
 Meet Our Team
 <i class="flaticon-right"></i>
 </a>
@@ -356,10 +353,13 @@ Meet Our Team
 </div>
 </div>
 <div class="row">
+
+@foreach ($team as $t)
+    
 <div class="col-lg-3 col-sm-6">
 <div class="single-team-member">
 <div class="team-image">
-<img src="{{ asset('assets/assetpage/img/team/7.png') }}" alt="image">
+<img style="width:380px; height:250px;" src="/storage/Management Team/{{ $t->image }}" width="380" height="350" alt="image">
 </div>
 <ul class="social-btn">
 <li>
@@ -379,107 +379,16 @@ Meet Our Team
 </li>
 </ul>
 <div class="member-content">
-<h3>Alex Maxwel</h3>
-<span>CEO & Founder</span>
+<h3>{{ $t->full_name }}</h3>
+<span>{{ $t->position }}</span>
 </div>
 <div class="team-icon">
 <i class="flaticon-plus"></i>
 </div>
 </div>
 </div>
-<div class="col-lg-3 col-sm-6">
-<div class="single-team-member">
-<div class="team-image">
-<img src="{{ asset('assets/assetpage/img/team/8.png') }}" alt="image">
-</div>
-<ul class="social-btn">
-<li>
-<a href="#">
-<i class="flaticon-facebook"></i>
-</a>
-</li>
-<li>
-<a href="#">
-<i class="flaticon-twitter"></i>
-</a>
-</li>
-<li>
-<a href="#">
-<i class="flaticon-instagram"></i>
-</a>
-</li>
-</ul>
-<div class="member-content">
-<h3>Smith Jhon</h3>
-<span>Manager</span>
-</div>
-<div class="team-icon">
-<i class="flaticon-plus"></i>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6">
-<div class="single-team-member">
-<div class="team-image">
-<img src="{{ asset('assets/assetpage/img/team/9.png') }}" alt="image">
-</div>
-<ul class="social-btn">
-<li>
-<a href="#">
-<i class="flaticon-facebook"></i>
-</a>
-</li>
-<li>
-<a href="#">
-<i class="flaticon-twitter"></i>
-</a>
-</li>
-<li>
-<a href="#">
-<i class="flaticon-instagram"></i>
-</a>
-</li>
-</ul>
-<div class="member-content">
-<h3>Ched Kurtsovski</h3>
-<span>Volunteer</span>
-</div>
-<div class="team-icon">
-<i class="flaticon-plus"></i>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-sm-6">
-<div class="single-team-member">
-<div class="team-image">
-<img src="{{ asset('assets/assetpage/img/team/10.png') }}" alt="image">
-</div>
-<ul class="social-btn">
-<li>
-<a href="#">
-<i class="flaticon-facebook"></i>
-</a>
-</li>
-<li>
-<a href="#">
-<i class="flaticon-twitter"></i>
-</a>
-</li>
-<li>
-<a href="#">
-<i class="flaticon-instagram"></i>
-</a>
-</li>
-</ul>
-<div class="member-content">
-<h3>Ched Kurtsovski</h3>
-<span>Volunteer</span>
-</div>
-<div class="team-icon">
-<i class="flaticon-plus"></i>
-</div>
-</div>
-</div>
+@endforeach
+
 </div>
 </div>
 </section>
@@ -496,12 +405,15 @@ Meet Our Team
 <p>Event makes suspendice adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendices gravida.</p>
 </div>
 <div class="event-slider owl-carousel owl-theme">
+
+@foreach ($event as $e )
+    
 <div class="event-item">
 <div class="row">
 <div class="col-lg-4">
 <div class="event-time">
-<h3>0-130</h3>
-<span>5 December 2021</span>
+{{-- <h3>0-130</h3> --}}
+<span>{{ $e->event_date }}</span>
 <div class="icon">
 <i class="flaticon-clock"></i>
 </div>
@@ -509,23 +421,25 @@ Meet Our Team
 </div>
 <div class="col-lg-8">
 <div class="event-content">
-<h4>Huruma Con Donation 2021</h4>
+<h4>{{ $e->title }}</h4>
 <ul class="event-meta">
 <li>
 <i class="flaticon-clock"></i>
-8:00 - 10:00
+{{ $e->starttime }}-{{ $e->endtime }}
 </li>
 <li>
 <i class="flaticon-pin"></i>
-Newyork City
+{{ $e->location }}
 </li>
 </ul>
-<p>Dona ques suspendice consectetucaquuis ipsums gravida.</p>
-<a href="detailed" class="event-btn-one">Join Now +</a>
+<a href="{{ route('Event-Detail',$e->id) }}" class="event-btn-one">Learn More +</a>
 </div>
 </div>
 </div>
 </div>
+@endforeach
+
+{{-- 
 <div class="event-item">
 <div class="row">
 <div class="col-lg-4">
@@ -556,6 +470,7 @@ Calfornia City
 </div>
 </div>
 </div>
+
 <div class="event-item">
 <div class="row">
 <div class="col-lg-4">
@@ -586,6 +501,8 @@ Newyork City
 </div>
 </div>
 </div>
+
+
 <div class="event-item">
 <div class="row">
 <div class="col-lg-4">
@@ -615,7 +532,9 @@ Calfornia City
 </div>
 </div>
 </div>
-</div>
+</div> --}}
+
+
 </div>
 </div>
 </section>
@@ -626,7 +545,7 @@ Calfornia City
 <div class="section-title">
 <h2>Want you know How Can Help?</h2>
 <p>Toiken ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididuntlabore et dolore magna aliqua. Ut enim ad minim.</p>
-<a href="donate" class="donate-btn">
+<a href="{{ route('Donate') }}" class="donate-btn">
 Donate Now
 <i class="flaticon-right"></i>
 </a>
@@ -649,24 +568,29 @@ Our Blog
 <h2>Check Out Our Latest News</h2>
 </div>
 <div class="row">
+
+@foreach ($news as $n)
+
 <div class="col-lg-4 col-md-6 col-sm-6">
 <div class="single-blog">
-<img src="{{ asset('assets/assetpage/img/blog/1.jpg') }}" alt="image">
+<img src="/storage/news/{{ $n->image }}" alt="image">
 <div class="content">
  <a href="#">
 <i class='bx bx-user'></i>
 </a>
-<span>Poor, 22 January</span>
+<span>{{ $n->category }}</span>
 <h3>
 <a href="#">
-Poverty not only money it can be food sometimes
+{{ $n->title }}
 </a>
 </h3>
-<a href="detailed" class="blog-btn">Read more +</a>
+<a href="{{ route('News-Detail',$n->id) }}" class="blog-btn">Read more +</a>
 </div>
 </div>
 </div>
-<div class="col-lg-4 col-md-6 col-sm-6">
+@endforeach
+
+{{-- <div class="col-lg-4 col-md-6 col-sm-6">
 <div class="single-blog">
 <img src="{{ asset('assets/assetpage/img/blog/2.jpg') }}" alt="image">
 <div class="content">
@@ -683,6 +607,8 @@ Strawberry-Banana Quinoa Muffins Recipe for poor
 </div>
 </div>
 </div>
+
+
 <div class="col-lg-4 col-md-6 col-sm-6 offset-sm-3 offset-lg-0">
 <div class="single-blog">
 <img src="{{ asset('assets/assetpage/img/blog/3.jpg') }}" alt="image">
@@ -700,6 +626,8 @@ The Plant-Powered Dietitian To Consume Habit
 </div>
 </div>
 </div>
+ --}}
+
 </div>
 </div>
 </section>

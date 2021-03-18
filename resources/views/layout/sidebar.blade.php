@@ -202,7 +202,7 @@
                     
                     <li class="app-sidebar__heading">Donations</li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('All-Donations') }}">
                             <i class="metismenu-icon fa fa-dollar-sign"></i> 
                             Donations Page                  
                         </a>
