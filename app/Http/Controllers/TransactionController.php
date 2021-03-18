@@ -34,15 +34,22 @@ class TransactionController extends Controller
 
     }
 
-    public function confirmTransaction(){
-        $getID = $_GET['transaction_id'];
-        $tx_ref = $_GET['tx_ref'];
+    /**
+     * Function to verify transaction
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function confirmTransaction(Request $request){
+        $getID = $request->transaction_id;
+        $tx_ref = $request->reference;
         $curl = curl_init();
         $secKey = config('values.rave_secret_key');
         //get the transaction
         $transaction = Transaction::where('transaction_id', '=', $tx_ref)->first();
         if($transaction->status == 'SUCCESSFULL'){
-            return redirect()->route('Donate')->with("success", "Transaction Completed.");
+            $response = ['status' => 1, 'message' => 'Transaction was succesful'];
+            return response()->json($response);
         }
 
         curl_setopt_array($curl, array(
@@ -73,23 +80,28 @@ class TransactionController extends Controller
                     if($response->data->currency == $findTrans->currency){
                         $findTrans->status = 'SUCCESSFULL';
                         if($findTrans->save()){
-                            return redirect()->route('Donate')->with("success", "Transaction Completed.");
+                             $response = ['status' => 1, 'message' => 'Transaction was succesful'];
+                              return response()->json($response);
                         }else{
-                            return redirect()->route('Donate')->with("error", "An error occurred, please try again later.");
+                        $response = ['status' => 0, 'message' => 'Transaction failed'];
+                        return response()->json($response);
                         }
                     }else{
                         $findTrans->status = 'FAILED';
                         $findTrans->save();
-                        return redirect()->route('Donate')->with("error", "An error occurred, please try again later.");
+                    $response = ['status' => 0, 'message' => 'Transaction failed'];
+                    return response()->json($response);
                     }
 
                 }else{
                     $findTrans->status = 'FAILED';
                     $findTrans->save();
-                    return redirect()->route('Donate')->with("error", "An error occurred, please try again later.");
+                $response = ['status' => 0, 'message' => 'Transaction failed'];
+                return response()->json($response);
                 }
             }else{
-                return redirect()->route('Donate')->with("error", "Transaction not Completed. Try Again Later!!!!");
+            $response = ['status' => 0, 'message' => 'Transaction failed'];
+            return response()->json($response);
             }
         // return view('pages.transaction');
     }
@@ -97,5 +109,6 @@ class TransactionController extends Controller
         $transactions = Transaction::all();
 
         return view('admin.admindonate',['transaction' => $transactions]);
-    }
+
+   }
 }

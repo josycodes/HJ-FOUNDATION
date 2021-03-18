@@ -176,8 +176,6 @@ $active5='active';
         currency: currency,
         country: "NG",
         payment_options: "account, card, banktransfer , barter , mobilemoneyghana, ussd , credit",
-        redirect_url: // specified redirect URL
-          "{{ route('Transaction') }}",
         meta: {
           consumer_id: 23,
           consumer_mac: "92a3-912ba-1192a",
@@ -189,6 +187,41 @@ $active5='active';
         },
         callback: function (data) {
           console.log(data);
+          var amount = data.amount;
+         var reference = data.tx_ref;
+         var status = data.status;
+         var transaction_id = data.transaction_id;
+         var fd = new FormData();
+        fd.append('amount', amount);
+        fd.append('reference', reference);
+       fd.append('status', status);
+       fd.append('transaction_id', transaction_id);
+       fd.append('_token', "{{ csrf_token() }}");
+           $('#submit').html('Confirming...');
+           $.ajax({
+           url: '{{route('Transaction')}}',
+           data: fd,
+           type: 'POST',
+           contentType: false,
+           processData: false,
+           })
+           .done((response) => {
+           if(response.status == 1){
+             swal("success", "Transaction was succcessful", "success");
+           }else{
+              swal("error", "Transaction failed", "error");
+           }
+
+           })
+           .fail( ()=> {
+               swal("error", "An error occured while trying to verify transaction", "error");
+           })
+           .always(() => {
+           $('#submit').html('Donate');
+           document.getElementById('submit').disabled = false;
+           });
+           //verification ends here
+
         },
         onclose: function() {
           // close modal
@@ -210,7 +243,7 @@ $active5='active';
     $("#submit").click(function(e) {
 
             e.preventDefault();
-
+            document.getElementById('submit').disabled = true;
             var name = $('#name').val();
             var email = $('#email').val();
             var phone = $('#phone_number').val();
