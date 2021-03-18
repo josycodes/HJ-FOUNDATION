@@ -82,7 +82,7 @@ class WebhookController extends Controller
         $paymentStatus = $resp['data']['status'];
         $chargeAmount = $resp['data']['amount'];
         $chargeCurrency = $resp['data']['currency'];
-        if (($paymentStatus == "successful") && ($chargeAmount == $amount) $$ ($chargeCurrency == $currency)) {
+        if(($paymentStatus == "successful") && ($chargeAmount == $amount) && ($chargeCurrency == $currency)) {
             //transaction was successful
             return true;
         } else {

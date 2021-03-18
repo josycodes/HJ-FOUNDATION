@@ -231,4 +231,5 @@ Route::get('Edit-Event/{id}', [EventController::class , 'editevent'])->name('Edi
 Route::post('Update-Event/{id}', [EventController::class , 'updateEvent'])->name('Update-Event');
 
 Route::get('DeleteEvent/{id}', [EventController::class , 'deleteEvent'])->name('DeleteEvent');
+
 Route::post('flutterwave-hook', [WebhookController::class, 'index'])->name('flutterwave-hook');
